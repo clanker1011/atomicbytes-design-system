@@ -2570,6 +2570,122 @@ footer.ds-foot {
   padding: 4px 10px;
 }
 
+
+/* ---------- Paper pattern specimens ---------- */
+.pattern-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-16);
+  margin-top: var(--space-24);
+  list-style: none;
+}
+.pattern-card {
+  background: var(--surface);
+  border: var(--stroke) solid var(--ink);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-stamp);
+  overflow: hidden;
+  min-width: 0;
+}
+.pattern-stage {
+  position: relative;
+  min-height: 200px;
+  padding: var(--space-24);
+  display: grid;
+  place-items: center;
+  border-bottom: var(--stroke) solid var(--ink);
+  background-color: var(--paper);
+}
+.pattern-sample-card {
+  position: relative;
+  z-index: 1;
+  max-width: 16rem;
+  width: 100%;
+  background: var(--surface);
+  border: var(--stroke) solid var(--ink);
+  border-radius: var(--radius-md);
+  box-shadow: 2px 2px 0 var(--ink);
+  padding: var(--space-16);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.pattern-kicker {
+  align-self: flex-start;
+  font-size: var(--fs-xs);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--yolk);
+  color: var(--on-accent);
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  padding: 2px 8px;
+}
+.pattern-sample-card strong {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  font-variation-settings: "SOFT" 60, "WONK" 1;
+}
+.pattern-sample-card p {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+.pattern-body {
+  padding: var(--space-16);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.pattern-body h4 {
+  font-size: var(--fs-lg);
+  font-weight: 600;
+}
+.pattern-body p {
+  font-size: var(--fs-sm);
+  color: var(--text);
+}
+
+/* A — workshop grid (matches body) */
+.pattern-a {
+  background-color: var(--paper);
+  background-image:
+    repeating-linear-gradient(90deg, transparent 0, transparent 23px, var(--grid-x) 24px),
+    repeating-linear-gradient(0deg, transparent 0, transparent 31px, var(--grid-y) 32px);
+}
+.pattern-a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: calc(var(--grain-opacity) * 1.1);
+  mix-blend-mode: var(--grain-blend);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* B — soft dot paper */
+.pattern-b {
+  background-color: var(--paper);
+  background-image: radial-gradient(color-mix(in srgb, var(--ink) 14%, transparent) 1px, transparent 1.2px);
+  background-size: 14px 14px;
+  background-position: 0 0;
+}
+
+/* C — sparse sparks (local band treatment) */
+.pattern-c {
+  background-color: var(--paper);
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='140' viewBox='0 0 180 140'><g fill='%231C1915' opacity='0.12'><path d='M36 22 L37.6 28.2 L44 29.4 L37.6 31 L36 37 L34.4 31 L28 29.4 L34.4 28.2 Z'/><path d='M120 18 L121.2 22.5 L126 23.4 L121.2 24.6 L120 29 L118.8 24.6 L114 23.4 L118.8 22.5 Z'/><path d='M88 70 L89.8 77 L97 78.4 L89.8 80.2 L88 87 L86.2 80.2 L79 78.4 L86.2 77 Z'/><path d='M152 88 L153 92 L157 93 L153 94 L152 98 L151 94 L147 93 L151 92 Z'/><path d='M48 108 L49.2 112.2 L54 113 L49.2 114.2 L48 118.5 L46.8 114.2 L42 113 L46.8 112.2 Z'/><path d='M160 40 L160.8 43 L164 43.6 L160.8 44.4 L160 47.5 L159.2 44.4 L156 43.6 L159.2 43 Z'/></g></svg>");
+  background-size: 180px 140px;
+  background-repeat: repeat;
+}
+:root[data-theme="dark"] .pattern-c {
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='140' viewBox='0 0 180 140'><g fill='%23F3EDE2' opacity='0.14'><path d='M36 22 L37.6 28.2 L44 29.4 L37.6 31 L36 37 L34.4 31 L28 29.4 L34.4 28.2 Z'/><path d='M120 18 L121.2 22.5 L126 23.4 L121.2 24.6 L120 29 L118.8 24.6 L114 23.4 L118.8 22.5 Z'/><path d='M88 70 L89.8 77 L97 78.4 L89.8 80.2 L88 87 L86.2 80.2 L79 78.4 L86.2 77 Z'/><path d='M152 88 L153 92 L157 93 L153 94 L152 98 L151 94 L147 93 L151 92 Z'/><path d='M48 108 L49.2 112.2 L54 113 L49.2 114.2 L48 118.5 L46.8 114.2 L42 113 L46.8 112.2 Z'/><path d='M160 40 L160.8 43 L164 43.6 L160.8 44.4 L160 47.5 L159.2 44.4 L156 43.6 L159.2 43 Z'/></g></svg>");
+  background-size: 180px 140px;
+}
+
 /* ---------- Mobile-first breakpoints ---------- */
 /* Default styles above are the 320px floor.
    480  — slightly roomier phone / small doodle grids
@@ -2665,6 +2781,7 @@ footer.ds-foot {
 
 @media (min-width: 900px) {
   html { scroll-padding-top: 24px; }
+  .pattern-grid { grid-template-columns: repeat(3, 1fr); }
   .shell { grid-template-columns: var(--nav-width) 1fr; }
   .side-nav { display: block; }
   .top-nav { display: none; }

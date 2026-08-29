@@ -490,6 +490,73 @@
             </div>
           </div>
 
+
+          <h3 style="font-size:var(--fs-xl);margin-top:var(--space-32);margin-bottom:var(--space-8)">Paper patterns</h3>
+          <p class="muted" style="font-size:var(--fs-sm);max-width:52ch">Quiet texture under the work — not wallpaper. Compare three restrained options. Cards and code slabs stay solid either way. Pick one direction for marketing pages; don’t stack all three.</p>
+
+          <ul class="pattern-grid">
+            <li class="pattern-card">
+              <div class="pattern-stage pattern-a" aria-hidden="true">
+                <div class="pattern-sample-card">
+                  <span class="pattern-kicker">A · current</span>
+                  <strong>Workshop grid</strong>
+                  <p>Faint desk grid + film grain. What the DS uses today.</p>
+                </div>
+              </div>
+              <div class="pattern-body">
+                <h4>Workshop grid</h4>
+                <p>Hairline grid on paper, grain overlay on top. Already shipping. Safe default for the whole site.</p>
+              </div>
+            </li>
+            <li class="pattern-card">
+              <div class="pattern-stage pattern-b" aria-hidden="true">
+                <div class="pattern-sample-card">
+                  <span class="pattern-kicker">B · candidate</span>
+                  <strong>Dot paper</strong>
+                  <p>Soft risograph dots. More fiber, still readable.</p>
+                </div>
+              </div>
+              <div class="pattern-body">
+                <h4>Dot paper</h4>
+                <p>A barely-there dot screen — print-shop paper without the noise. Good if the grid feels too “engineer desk.”</p>
+              </div>
+            </li>
+            <li class="pattern-card">
+              <div class="pattern-stage pattern-c" aria-hidden="true">
+                <div class="pattern-sample-card">
+                  <span class="pattern-kicker">C · candidate</span>
+                  <strong>Sparse sparks</strong>
+                  <p>A few tiny sparks in the field. Band accent, not full-page wallpaper.</p>
+                </div>
+              </div>
+              <div class="pattern-body">
+                <h4>Sparse sparks</h4>
+                <p>Use as a <em>section</em> treatment (hero or footer), not the global page fill. Keep density low or it turns into clip art.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="rules" style="margin-top: var(--space-24)">
+            <div class="rule-card do">
+              <h3><span class="badge do">Do</span> Pattern rules</h3>
+              <ul>
+                <li>Keep contrast: body type must still clear WCAG on the patterned field</li>
+                <li>Solid surfaces for cards, code, and forms</li>
+                <li>One global pattern; sparks only as a local band</li>
+                <li>Tone down further in night paper (opacity follows the theme)</li>
+              </ul>
+            </div>
+            <div class="rule-card dont">
+              <h3><span class="badge dont">Don’t</span> Wallpaper</h3>
+              <ul>
+                <li>Full-bleed shape mosaics behind long reading</li>
+                <li>Animated patterns or parallax glitter</li>
+                <li>Pattern on top of code slabs or inputs</li>
+                <li>Mixing grid + dots + sparks on the same page</li>
+              </ul>
+            </div>
+          </div>
+
           <h3 style="font-size:var(--fs-xl);margin-top:var(--space-32);margin-bottom:var(--space-8)">Toggle + persist</h3>
           <p class="muted" style="font-size:var(--fs-sm);max-width:52ch">The Light / Dark control in the sidebar (and mobile header) sets <code>data-theme</code> on <code>&lt;html&gt;</code> and writes <code>localStorage.ab-theme</code>. If nothing is stored, the page follows <code>prefers-color-scheme</code>. Flip it — cards, buttons, quotes, forms, and code slabs should all track.</p>
           <pre class="code-block" tabindex="0"><span class="c">/* tokens.css — color is the only layer that swaps */</span>
