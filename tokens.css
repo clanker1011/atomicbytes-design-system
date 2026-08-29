@@ -58,8 +58,13 @@
   --accent-3: var(--mint);    /* strips, collab marks */
   --accent-4: var(--yolk);    /* stickers, atom nucleus */
   --danger: var(--coral);
+  --success: var(--mint);     /* sticker accent for success — not body text */
+  --warning: var(--yolk);     /* sticker accent for warning — not body text */
   --focus: var(--cobalt);
   --on-accent: var(--print-ink); /* type on sticker fills; never invert */
+
+  /* Form helper text stays --ink / --muted for WCAG.
+     State color lives on the border, focus ring, and message mark — not the sentence. */
 
   /* Derived hairlines / grain — follow --ink so they invert in dark */
   --hairline: color-mix(in srgb, var(--ink) 22%, transparent);

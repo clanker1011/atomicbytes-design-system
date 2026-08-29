@@ -1436,15 +1436,94 @@
 
           <div class="comp-block">
             <h3>Field</h3>
-            <p class="comp-note">Simple email / text input. Figtree label, surface fill, ink stroke, cobalt focus ring (3px / 3px offset). Pair with a coral “Say hi” stamp button.</p>
+            <p class="comp-note">Figtree label, surface fill, ink stroke, stamp shadow. Cobalt focus ring by default. Pair with a coral “Say hi” when it’s a capture form.</p>
             <div class="playground">
               <form class="field-row" action="#" method="get" onsubmit="event.preventDefault(); return false;">
                 <div class="field">
                   <label for="say-hi-email">Email</label>
                   <input id="say-hi-email" name="email" type="email" autocomplete="email" placeholder="you@studio.com">
+                  <p class="field-hint">We’ll only use this to write back.</p>
                 </div>
                 <button class="btn btn-fill" type="button">Say hi</button>
               </form>
+            </div>
+          </div>
+
+          <div class="comp-block">
+            <h3>Field states</h3>
+            <p class="comp-note">State color lives on the border, stamp shadow, and message mark — not the sentence. Helper copy stays ink/muted so it clears WCAG on cream and night paper. Coral = error, mint = success, yolk = warning.</p>
+            <div class="playground">
+              <ul class="field-state-grid">
+                <li class="field-state-card">
+                  <span class="state-tag">Default</span>
+                  <div class="field">
+                    <label for="field-default">Name</label>
+                    <input id="field-default" type="text" placeholder="Matt Sell" value="">
+                    <p class="field-hint">Optional helper under the field.</p>
+                  </div>
+                </li>
+                <li class="field-state-card">
+                  <span class="state-tag">Focus</span>
+                  <div class="field">
+                    <label for="field-focus">Email</label>
+                    <input id="field-focus" type="email" value="hello@atomicbytes.com" class="is-demo-focus">
+                    <p class="field-hint">Tab here — cobalt ring, 3px / 3px offset.</p>
+                  </div>
+                </li>
+                <li class="field-state-card">
+                  <span class="state-tag">Error</span>
+                  <div class="field is-error">
+                    <label for="field-error">Email</label>
+                    <input id="field-error" type="email" value="not-an-email" aria-invalid="true" aria-describedby="field-error-msg">
+                    <p class="field-msg" id="field-error-msg" role="alert">That doesn’t look like an email.</p>
+                  </div>
+                </li>
+                <li class="field-state-card">
+                  <span class="state-tag">Success</span>
+                  <div class="field is-success">
+                    <label for="field-success">Email</label>
+                    <input id="field-success" type="email" value="hello@atomicbytes.com" aria-describedby="field-success-msg">
+                    <p class="field-msg" id="field-success-msg">Looks good — we’ll write back.</p>
+                  </div>
+                </li>
+                <li class="field-state-card">
+                  <span class="state-tag">Warning</span>
+                  <div class="field is-warning">
+                    <label for="field-warn">Studio URL</label>
+                    <input id="field-warn" type="text" value="atomicbytes" aria-describedby="field-warn-msg">
+                    <p class="field-msg" id="field-warn-msg">Missing a domain — add .com if you meant the site.</p>
+                  </div>
+                </li>
+                <li class="field-state-card">
+                  <span class="state-tag">Disabled</span>
+                  <div class="field is-disabled">
+                    <label for="field-disabled">Invite code</label>
+                    <input id="field-disabled" type="text" value="AB-0000" disabled>
+                    <p class="field-hint">Unavailable in this demo.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="rules" style="margin-top: var(--space-24)">
+              <div class="rule-card do">
+                <h3><span class="badge do">Do</span> Form states</h3>
+                <ul>
+                  <li>Put coral / mint / yolk on the border and the message mark</li>
+                  <li>Keep the message sentence in ink (or muted for hints)</li>
+                  <li>Wire <code>aria-invalid</code> and <code>aria-describedby</code> on error</li>
+                  <li>Use <code>role="alert"</code> for error messages that appear after submit</li>
+                </ul>
+              </div>
+              <div class="rule-card dont">
+                <h3><span class="badge dont">Don’t</span> Candy text</h3>
+                <ul>
+                  <li>Coral or mint as the helper sentence on paper — fails contrast</li>
+                  <li>Validate only with color; the mark + words have to carry it</li>
+                  <li>Disable a field without saying why</li>
+                  <li>Swap the focus ring to neon or drop the ink outline</li>
+                </ul>
+              </div>
             </div>
           </div>
 

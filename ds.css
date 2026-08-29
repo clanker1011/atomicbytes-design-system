@@ -1738,9 +1738,11 @@ footer.ds-foot {
 .field label {
   font-size: var(--fs-sm);
   font-weight: 700;
+  color: var(--ink);
 }
 .field input[type="email"],
-.field input[type="text"] {
+.field input[type="text"],
+.field textarea {
   font-family: var(--font-body);
   font-size: var(--fs-md);
   color: var(--ink);
@@ -1752,12 +1754,135 @@ footer.ds-foot {
   box-shadow: 2px 2px 0 var(--ink);
   width: 100%;
 }
-.field input::placeholder { color: var(--muted); opacity: 0.7; }
-.field input:focus {
+.field textarea {
+  min-height: 6.5rem;
+  resize: vertical;
+  line-height: var(--lh-body);
+}
+.field input::placeholder,
+.field textarea::placeholder { color: var(--muted); opacity: 0.7; }
+.field input:focus,
+.field textarea:focus {
   outline: 3px solid var(--focus);
   outline-offset: 3px;
 }
 .field-row .btn { flex: 1 1 100%; width: 100%; }
+
+.field-hint,
+.field-msg {
+  font-size: var(--fs-sm);
+  line-height: var(--lh-snug);
+  color: var(--text-muted);
+  margin: 0;
+}
+.field-msg {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: var(--ink);
+  font-weight: 600;
+}
+.field-msg::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  margin-top: 0.35em;
+  border-radius: 50%;
+  border: 1.5px solid var(--ink);
+  background: var(--ink);
+  flex: 0 0 auto;
+}
+
+/* Error — coral border + mark; message stays ink for contrast */
+.field.is-error input,
+.field.is-error textarea {
+  border-color: var(--danger);
+  box-shadow: 2px 2px 0 var(--danger);
+}
+.field.is-error input:focus,
+.field.is-error textarea:focus {
+  outline-color: var(--danger);
+}
+.field.is-error .field-msg::before {
+  background: var(--danger);
+  border-color: var(--ink);
+}
+
+/* Success — mint border + mark */
+.field.is-success input,
+.field.is-success textarea {
+  border-color: var(--success);
+  box-shadow: 2px 2px 0 var(--success);
+}
+.field.is-success input:focus,
+.field.is-success textarea:focus {
+  outline-color: var(--success);
+}
+.field.is-success .field-msg::before {
+  background: var(--success);
+  border-color: var(--ink);
+}
+
+/* Warning — yolk border + mark */
+.field.is-warning input,
+.field.is-warning textarea {
+  border-color: var(--warning);
+  box-shadow: 2px 2px 0 var(--warning);
+}
+.field.is-warning input:focus,
+.field.is-warning textarea:focus {
+  outline-color: var(--warning);
+}
+.field.is-warning .field-msg::before {
+  background: var(--warning);
+  border-color: var(--ink);
+}
+
+/* Disabled */
+.field.is-disabled label { color: var(--muted); }
+.field.is-disabled input,
+.field.is-disabled textarea {
+  opacity: 0.55;
+  cursor: not-allowed;
+  background: var(--paper-shade);
+  box-shadow: none;
+}
+.field.is-disabled .field-hint { opacity: 0.8; }
+
+/* Specimen-only: paint the focus ring so the Focus card reads without tabbing */
+.field input.is-demo-focus {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.field-state-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-16);
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.field-state-card {
+  background: var(--paper);
+  border: var(--stroke-thin) dashed var(--ink);
+  border-radius: var(--radius-md);
+  padding: var(--space-16);
+  min-width: 0;
+}
+.field-state-card .state-tag {
+  display: inline-block;
+  font-size: var(--fs-xs);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-12);
+  padding: 2px 8px;
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  background: var(--surface);
+}
 
 
 /* ---------- Theme toggle ---------- */
@@ -2482,6 +2607,7 @@ footer.ds-foot {
 @media (min-width: 768px) {
   .shape-grid { grid-template-columns: repeat(4, 1fr); }
   .shape-grid-teaser { grid-template-columns: repeat(3, 1fr); }
+  .field-state-grid { grid-template-columns: 1fr 1fr; }
   .principle { transform: rotate(var(--tilt, 0deg)); }
   .principle-grid,
   .rules,
