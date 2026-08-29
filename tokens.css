@@ -5,15 +5,22 @@
  * Mood: mid-century atomic optimism / toy workshop / risograph —
  * inks on warm paper, not neon on black.
  *
+ * Themes: light is cream paper (default). Dark is "night paper" —
+ * a warm ink field with cream type. Accents stay stickers.
+ *
  * Retired forever: #0b0c10, cyan #63e6ff, violet #a78bfa, pink #ff5fd1, Inter, glass.
  *
  * Accents (coral, mint, cobalt, yolk) behave like inks / stickers / stamps:
  * they fill shapes that keep an ink outline. Do not use mint or yolk as text.
  * Pair every accent fill with --ink type (or an ink stroke).
+ *
+ * Theming: color custom properties swap under [data-theme="dark"].
+ * An explicit data-theme wins over prefers-color-scheme.
+ * Type, space, radius, stroke, and motion do not change with theme.
  */
 
 :root {
-  /* ---------- Color ---------- */
+  /* ---------- Color (light / cream paper — default) ---------- */
   /* Paper is cream with fiber, never flat white. Ink is warm near-black. */
   --paper: #F6F1E8;
   --paper-shade: #EBE4D6;
@@ -26,6 +33,11 @@
   --yolk: #FFD84A;
   --surface: #FFFBF3;
   --surface-inset: #E8E0D0;
+
+  /* Print constants — never invert. Raster mascots sit on cream. */
+  --print-ink: #1C1915;
+  --print-paper: #F6F1E8;
+  --mascot-field: var(--print-paper);
 
   /* Code slabs — warm ink, not VS Code purple. Paper type on ink reads AAA. */
   --code-bg: #1C1915;
@@ -46,6 +58,16 @@
   --accent-4: var(--yolk);    /* stickers, atom nucleus */
   --danger: var(--coral);
   --focus: var(--cobalt);
+
+  /* Derived hairlines / grain — follow --ink so they invert in dark */
+  --hairline: color-mix(in srgb, var(--ink) 22%, transparent);
+  --rule: color-mix(in srgb, var(--ink) 35%, transparent);
+  --grid-x: color-mix(in srgb, var(--ink) 6%, transparent);
+  --grid-y: color-mix(in srgb, var(--ink) 5%, transparent);
+  --grain-blend: multiply;
+  --grain-opacity: 0.12;
+
+  color-scheme: light;
 
   /* ---------- Type ---------- */
   --font-brand: "Sixtyfour Convergence", ui-monospace, "Cascadia Mono", monospace;
@@ -109,4 +131,66 @@
   --orbit-slow: 24s;
   --motion-lift: 1px;
   --motion-lift-card: 2px;
+}
+
+/*
+ * Night paper — mid-century darkroom, not neon SaaS.
+ * Field is warm ink; type is soft cream; stickers stay coral/mint/cobalt/yolk.
+ * Outlines and stamp shadows follow --ink (now cream).
+ */
+:root[data-theme="dark"] {
+  --paper: #241F18;
+  --paper-shade: #1C1813;
+  --ink: #F3EDE2;
+  --muted: #C4BAAE;
+  --line: #E8DFD0;
+  --coral: #FF5B3C;
+  --mint: #2EE6A6;
+  --cobalt: #4B6BFF;
+  --yolk: #FFD84A;
+  --surface: #2F2921;
+  --surface-inset: #1A1611;
+
+  --code-bg: #16130F;
+  --code-fg: #F3EDE2;
+  --code-comment: #A89F92;
+  --code-keyword: #4B6BFF;
+  --code-string: #2EE6A6;
+  --code-fn: #FF5B3C;
+  --code-num: #FFD84A;
+
+  --grain-blend: overlay;
+  --grain-opacity: 0.22;
+
+  color-scheme: dark;
+}
+
+/* OS preference only when the user has not pinned Light. Explicit Dark is above. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #241F18;
+    --paper-shade: #1C1813;
+    --ink: #F3EDE2;
+    --muted: #C4BAAE;
+    --line: #E8DFD0;
+    --coral: #FF5B3C;
+    --mint: #2EE6A6;
+    --cobalt: #4B6BFF;
+    --yolk: #FFD84A;
+    --surface: #2F2921;
+    --surface-inset: #1A1611;
+
+    --code-bg: #16130F;
+    --code-fg: #F3EDE2;
+    --code-comment: #A89F92;
+    --code-keyword: #4B6BFF;
+    --code-string: #2EE6A6;
+    --code-fn: #FF5B3C;
+    --code-num: #FFD84A;
+
+    --grain-blend: overlay;
+    --grain-opacity: 0.22;
+
+    color-scheme: dark;
+  }
 }

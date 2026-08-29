@@ -13,7 +13,8 @@ Browse the design system: https://clanker1011.github.io/atomicbytes-design-syste
 A self-contained, polished documentation site for the AtomicBytes brand:
 
 - Mid-century atomic optimism / toy workshop / risograph
-- Cream paper, warm ink, coral primary, mint / cobalt / yolk accents as stickers
+- Cream paper (default) and night-paper dark — warm ink field, cream type, same sticker accents
+- Coral primary, mint / cobalt / yolk accents as stickers
 - Sixtyfour Convergence · Fraunces · Figtree
 - Chunky ink-outline buttons with stamp shadows (the recipe the user liked)
 
@@ -39,19 +40,20 @@ Upstream references (do not duplicate as truth):
 
 1. **Intro** — what the system is for
 2. **Principles** — atomic optimism, ink on paper, stickers not glows, craft not circus
-3. **Color** — swatches with hex + token names + do/don’t
-4. **Typography** — three families + scale
-5. **Space** — spacing scale, radius, stroke, stamp shadow
-6. **Logo** — mark / mark+wordmark / wordmark lockups, clearspace (½ W), min sizes, don’ts
-7. **Characters** — gallery plus usage matrix (who, when, min size)
-8. **Icons / doodles** — 2–2.5px ink stroke samples (not an icon font)
-9. **Motion** — orbits 18–24s linear, stamp hover lift, reduced-motion
-10. **Components** — Button, Card, Stamp, Nav chip, Focus, Links, Issue 00 tray, Field + Say hi
-11. **Code** — inline, fenced TS, YAML/JSON config, terminal, filename tabs, short vs noisy
-12. **Quotes** — body quote (ink rule) and callout (mint stamp bar, Fraunces)
-13. **Blog example** — composed specimen post using quotes + snippets (not a live Issue)
-14. **Voice** — tone notes from existing copy
-15. **Adoption** — how to use `tokens.css` on a future site
+3. **Color** — swatches with hex + token names + do/don’t (hexes follow the active theme)
+4. **Theming** — light / night-paper tokens, toggle + `localStorage`, dark rules
+5. **Typography** — three families + scale
+6. **Space** — spacing scale, radius, stroke, stamp shadow
+7. **Logo** — mark / mark+wordmark / wordmark lockups, clearspace (½ W), min sizes, don’ts
+8. **Characters** — gallery plus usage matrix (who, when, min size)
+9. **Icons / doodles** — 2–2.5px ink stroke samples (not an icon font)
+10. **Motion** — orbits 18–24s linear, stamp hover lift, reduced-motion
+11. **Components** — Button, Card, Stamp, Nav chip, Focus, Links, Issue 00 tray, Field + Say hi
+12. **Code** — inline, fenced TS, YAML/JSON config, terminal, filename tabs, short vs noisy
+13. **Quotes** — body quote (ink rule) and callout (mint stamp bar, Fraunces)
+14. **Blog example** — composed specimen post using quotes + snippets (not a live Issue)
+15. **Voice** — tone notes from existing copy
+16. **Adoption** — how to use `tokens.css` on a future site
 
 ## Characters (expected filenames)
 
@@ -81,7 +83,7 @@ If a PNG is missing, the page shows a dashed “Asset pending” placeholder for
 
 1. Copy `tokens.css` as the single source of truth
 2. Load Sixtyfour Convergence, Fraunces (opsz, wght), Figtree
-3. Replace utility colors; delete dark neon SaaS variables
+3. Replace utility colors; delete neon SaaS variables. Keep cream + night-paper themes from this sheet.
 4. Rebuild components from the recipes on this page
 5. Keep copy as written — the system is visual
 
