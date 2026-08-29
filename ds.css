@@ -59,7 +59,7 @@ code {
   top: -48px;
   z-index: 500;
   background: var(--yolk);
-  color: var(--ink);
+  color: var(--on-accent);
   border: var(--stroke) solid var(--ink);
   padding: var(--space-8) var(--space-16);
   border-radius: var(--radius-sm);
@@ -141,6 +141,7 @@ code {
 }
 .side-nav a[aria-current="true"] {
   background: var(--yolk);
+  color: var(--on-accent);
   border-color: var(--ink);
   box-shadow: 2px 2px 0 var(--ink);
 }
@@ -218,6 +219,7 @@ code {
 .top-nav-links a:hover,
 .top-nav-links a[aria-current="true"] {
   background: var(--coral);
+  color: var(--on-accent);
 }
 
 .content {
@@ -452,8 +454,8 @@ code {
   padding: 2px 8px;
   border-radius: 4px;
 }
-.badge.do { background: var(--mint); }
-.badge.dont { background: var(--coral); color: var(--ink); }
+.badge.do { background: var(--mint); color: var(--on-accent); }
+.badge.dont { background: var(--coral); color: var(--on-accent); }
 
 /* ---------- Typography ---------- */
 .type-card {
@@ -684,9 +686,9 @@ code {
   transform: translate(1px, 1px);
   box-shadow: var(--shadow-stamp-press);
 }
-.btn-fill { background: var(--coral); }
+.btn-fill { background: var(--coral); color: var(--on-accent); }
 .btn-ghost { background: var(--surface); }
-.btn-yolk { background: var(--yolk); }
+.btn-yolk { background: var(--yolk); color: var(--on-accent); }
 .btn:focus-visible { outline-offset: 4px; }
 .btn:disabled, .btn[aria-disabled="true"] {
   opacity: 0.45;
@@ -727,6 +729,7 @@ code {
   width: 52px;
   height: 52px;
   background: var(--yolk);
+  color: var(--on-accent);
   border: var(--stroke) solid var(--ink);
   border-radius: 50%;
   display: grid;
@@ -757,7 +760,7 @@ code {
 }
 .stamp.ink { color: var(--ink); border-color: var(--ink); }
 .stamp.mint-stamp {
-  color: var(--ink);
+  color: var(--on-accent);
   border-color: var(--ink);
   background: var(--mint);
 }
@@ -802,6 +805,7 @@ code {
 .nav-chip-pill:hover,
 .nav-chip-pill[aria-current="true"] {
   background: var(--coral);
+  color: var(--on-accent);
 }
 
 .focus-demo {
@@ -910,6 +914,7 @@ code {
   width: 28px;
   height: 28px;
   background: var(--yolk);
+  color: var(--on-accent);
   border: 2px solid var(--ink);
   box-shadow: 2px 2px 0 var(--ink);
   display: grid;
@@ -1107,7 +1112,7 @@ pre.code-block { margin-top: var(--space-16); }
   font-weight: 700;
   letter-spacing: 0.02em;
   background: var(--yolk);
-  color: var(--ink);
+  color: var(--on-accent);
   border: var(--stroke) solid var(--ink);
   border-bottom: none;
   border-radius: 8px 8px 0 0;
@@ -1146,7 +1151,7 @@ pre.code-block { margin-top: var(--space-16); }
   letter-spacing: 0.06em;
   text-transform: uppercase;
   background: var(--mint);
-  color: var(--ink);
+  color: var(--on-accent);
   border: 2px solid var(--ink);
   border-radius: 4px;
   padding: 2px 6px;
@@ -1673,6 +1678,7 @@ footer.ds-foot {
   padding: 4px 8px;
   transform: rotate(3deg);
   background: var(--yolk);
+  color: var(--on-accent);
 }
 .issue .blurb {
   color: var(--text);
@@ -1786,6 +1792,7 @@ footer.ds-foot {
 }
 .theme-toggle button[aria-pressed="true"] {
   background: var(--yolk);
+  color: var(--on-accent);
 }
 .side-nav .theme-toggle {
   display: flex;

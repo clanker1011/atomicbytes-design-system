@@ -444,8 +444,14 @@
               </tr>
               <tr>
                 <td>Accents</td>
-                <td colspan="2"><span class="chip-mini" style="background:#FF5B3C"></span> coral · <span class="chip-mini" style="background:#2EE6A6"></span> mint · <span class="chip-mini" style="background:#4B6BFF"></span> cobalt · <span class="chip-mini" style="background:#FFD84A"></span> yolk — same in both</td>
-                <td>Stickers, never glows</td>
+                <td><span class="chip-mini" style="background:#FF5B3C"></span> coral · mint · <span class="chip-mini" style="background:#4B6BFF"></span> cobalt · yolk</td>
+                <td><span class="chip-mini" style="background:#FF5B3C"></span> coral · mint · <span class="chip-mini" style="background:#8AA0FF"></span> cobalt #8AA0FF · yolk</td>
+                <td>Stickers. Cobalt lightens in dark so type hits AA.</td>
+              </tr>
+              <tr>
+                <td><code>--on-accent</code></td>
+                <td colspan="2"><span class="chip-mini" style="background:#1C1915"></span><span class="hex">#1C1915</span> — always print-ink</td>
+                <td>Type sitting on coral / mint / yolk / cobalt fills</td>
               </tr>
             </tbody>
           </table>
@@ -457,6 +463,8 @@
               <h3><span class="badge do">Do</span> Night paper</h3>
               <ul>
                 <li>Ink outlines become cream / light strokes — <code>--ink</code> inverts, so borders and <code>--shadow-stamp</code> follow</li>
+                <li>Type on sticker fills uses <code>--on-accent</code> (print-ink #1C1915) — cream on coral is 2.65:1 and fails</li>
+                <li>Cobalt lightens to #8AA0FF so kickers, focus, and code keywords hit 4.5:1</li>
                 <li>Use <code>--line</code> (#E8DFD0) when a full cream stroke is too loud</li>
                 <li>Code slabs stay warm ink plates, just deeper than the page (<code>--code-bg</code> #16130F)</li>
                 <li>Sit raster mascots on <code>--mascot-field</code> (always cream #F6F1E8)</li>
@@ -470,6 +478,7 @@
                 <li>Glassmorphism, blur, or neon glows</li>
                 <li>Recolor PNG characters — rasters are print-ink on cream</li>
                 <li>Mint or yolk as body text (still)</li>
+                <li>Cream type on coral, mint, or yolk fills</li>
                 <li>Cool charcoal fields; night paper is warm</li>
               </ul>
             </div>

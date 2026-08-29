@@ -12,7 +12,8 @@
  *
  * Accents (coral, mint, cobalt, yolk) behave like inks / stickers / stamps:
  * they fill shapes that keep an ink outline. Do not use mint or yolk as text.
- * Pair every accent fill with --ink type (or an ink stroke).
+ * Pair every accent fill with --on-accent / --print-ink (warm near-black).
+ * Never put --ink on a sticker in dark theme: --ink becomes cream and fails WCAG.
  *
  * Theming: color custom properties swap under [data-theme="dark"].
  * An explicit data-theme wins over prefers-color-scheme.
@@ -58,6 +59,7 @@
   --accent-4: var(--yolk);    /* stickers, atom nucleus */
   --danger: var(--coral);
   --focus: var(--cobalt);
+  --on-accent: var(--print-ink); /* type on sticker fills; never invert */
 
   /* Derived hairlines / grain — follow --ink so they invert in dark */
   --hairline: color-mix(in srgb, var(--ink) 22%, transparent);
@@ -148,7 +150,7 @@
   --line: #E8DFD0;
   --coral: #FF5B3C;
   --mint: #2EE6A6;
-  --cobalt: #4B6BFF;
+  --cobalt: #8AA0FF; /* lightened so 16px type hits WCAG AA on paper/surface */
   --yolk: #FFD84A;
   --surface: #2F2921;
   --surface-inset: #1A1611;
@@ -156,13 +158,13 @@
   --code-bg: #16130F;
   --code-fg: #F3EDE2;
   --code-comment: #A89F92;
-  --code-keyword: #4B6BFF;
+  --code-keyword: #8AA0FF;
   --code-string: #2EE6A6;
   --code-fn: #FF5B3C;
   --code-num: #FFD84A;
 
   --grain-blend: overlay;
-  --grain-opacity: 0.22;
+  --grain-opacity: 0.10;
 
   color-scheme: dark;
 }
@@ -177,7 +179,7 @@
     --line: #E8DFD0;
     --coral: #FF5B3C;
     --mint: #2EE6A6;
-    --cobalt: #4B6BFF;
+    --cobalt: #8AA0FF;
     --yolk: #FFD84A;
     --surface: #2F2921;
     --surface-inset: #1A1611;
@@ -185,13 +187,13 @@
     --code-bg: #16130F;
     --code-fg: #F3EDE2;
     --code-comment: #A89F92;
-    --code-keyword: #4B6BFF;
+    --code-keyword: #8AA0FF;
     --code-string: #2EE6A6;
     --code-fn: #FF5B3C;
     --code-num: #FFD84A;
 
     --grain-blend: overlay;
-    --grain-opacity: 0.22;
+    --grain-opacity: 0.10;
 
     color-scheme: dark;
   }
