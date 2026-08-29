@@ -47,6 +47,7 @@
       <ol class="top-nav-links">
         <li><a href="#intro">Intro</a></li>
         <li><a href="#principles">Principles</a></li>
+        <li><a href="#responsive">Responsive</a></li>
         <li><a href="#color">Color</a></li>
         <li><a href="#theming">Theming</a></li>
         <li><a href="#typography">Type</a></li>
@@ -78,20 +79,21 @@
       <ol>
         <li><a href="#intro"><span class="n">01</span> Intro</a></li>
         <li><a href="#principles"><span class="n">02</span> Principles</a></li>
-        <li><a href="#color"><span class="n">03</span> Color</a></li>
-        <li><a href="#theming"><span class="n">04</span> Theming</a></li>
-        <li><a href="#typography"><span class="n">05</span> Typography</a></li>
-        <li><a href="#space"><span class="n">06</span> Space</a></li>
-        <li><a href="#logo"><span class="n">07</span> Logo</a></li>
-        <li><a href="#characters"><span class="n">08</span> Characters</a></li>
-        <li><a href="#icons"><span class="n">09</span> Icons</a></li>
-        <li><a href="#motion"><span class="n">10</span> Motion</a></li>
-        <li><a href="#components"><span class="n">11</span> Components</a></li>
-        <li><a href="#code"><span class="n">12</span> Code</a></li>
-        <li><a href="#quotes"><span class="n">13</span> Quotes</a></li>
-        <li><a href="#blog"><span class="n">14</span> Blog example</a></li>
-        <li><a href="#voice"><span class="n">15</span> Voice</a></li>
-        <li><a href="#adoption"><span class="n">16</span> Adoption</a></li>
+        <li><a href="#responsive"><span class="n">03</span> Responsiveness</a></li>
+        <li><a href="#color"><span class="n">04</span> Color</a></li>
+        <li><a href="#theming"><span class="n">05</span> Theming</a></li>
+        <li><a href="#typography"><span class="n">06</span> Typography</a></li>
+        <li><a href="#space"><span class="n">07</span> Space</a></li>
+        <li><a href="#logo"><span class="n">08</span> Logo</a></li>
+        <li><a href="#characters"><span class="n">09</span> Characters</a></li>
+        <li><a href="#icons"><span class="n">10</span> Icons</a></li>
+        <li><a href="#motion"><span class="n">11</span> Motion</a></li>
+        <li><a href="#components"><span class="n">12</span> Components</a></li>
+        <li><a href="#code"><span class="n">13</span> Code</a></li>
+        <li><a href="#quotes"><span class="n">14</span> Quotes</a></li>
+        <li><a href="#blog"><span class="n">15</span> Blog example</a></li>
+        <li><a href="#voice"><span class="n">16</span> Voice</a></li>
+        <li><a href="#adoption"><span class="n">17</span> Adoption</a></li>
       </ol>
       <p class="nav-foot">
         <strong>Source of truth</strong><br>
@@ -150,12 +152,97 @@
               <h3>Craft, not circus</h3>
               <p>Fun is allowed. Clowning is not. One accent per component; two at most. Serious studio with a wink.</p>
             </li>
+            <li class="principle">
+              <span class="tag">layout</span>
+              <h3>Fits the pocket</h3>
+              <p>Small screen is the default canvas. If it sings at 320, 1280 is a victory lap. See <a class="text-link" href="#responsive">Responsiveness</a>.</p>
+            </li>
+          </ul>
+        </section>
+
+
+        <!-- ========== RESPONSIVENESS ========== -->
+        <section id="responsive" class="ds-section" aria-labelledby="responsive-title">
+          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 03</p>
+          <h2 id="responsive-title">Responsiveness</h2>
+          <p class="lede">This page is the spec and the product. If it pinches, spills sideways, or hides a tap, the system is fibbing. Pocket first. Desk later.</p>
+
+          <ul class="principle-grid">
+            <li class="principle">
+              <span class="tag">why</span>
+              <h3>The pocket is the page</h3>
+              <p>Most visits aren’t at 1280. A layout that only works on a cinema display is a poster, not a product. If it isn’t usable at 320, it isn’t shipped.</p>
+            </li>
+            <li class="principle">
+              <span class="tag">default</span>
+              <h3>Mobile-first, not collapsed-desktop</h3>
+              <p>Write the small-screen CSS as the default. Min-width queries add columns, side-nav, and air. Don’t design a desk and then smash it with max-width.</p>
+            </li>
+            <li class="principle">
+              <span class="tag">type</span>
+              <h3>Fluid type &amp; space</h3>
+              <p>Clamp headings so they hit the scale on a desk and stay readable in the hand. Comfortable measure — no 90-character lines on a phone, no 12px body.</p>
+            </li>
+            <li class="principle">
+              <span class="tag">touch</span>
+              <h3>Forty-four pixels, no excuses</h3>
+              <p>Theme, nav chips, buttons, and fields get ~44px targets. Fingers are not cursors. If you have to pinch to tap Light/Dark, you failed the brief.</p>
+            </li>
+          </ul>
+
+          <div class="rules">
+            <div class="rule-card do">
+              <h3><span class="badge do">Do</span> Pocket rules</h3>
+              <ul>
+                <li>Mobile-first CSS: small is the default, <code>min-width</code> enhances</li>
+                <li>Fluid type with <code>clamp</code> that still hits the desktop scale</li>
+                <li>~44px tap targets on theme, chips, buttons, fields</li>
+                <li>No document-level horizontal scroll — code and tables scroll inside themselves</li>
+                <li>Images and SVG: <code>max-width: 100%</code>, <code>height: auto</code></li>
+                <li>Test at ~320, 375, 768, 1024, then 1280+</li>
+              </ul>
+            </div>
+            <div class="rule-card dont">
+              <h3><span class="badge dont">Don’t</span> Desk habits</h3>
+              <ul>
+                <li>A 900px layout that “collapses” and calls it responsive</li>
+                <li><code>overflow-x: hidden</code> on <code>body</code> to hide a broken grid</li>
+                <li>Tiny nav chips or a theme toggle that scrolls off-screen</li>
+                <li>Sticky chrome that eats half the viewport</li>
+                <li>Fixed widths, unbreakable strings, or lockups that refuse to wrap</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 style="font-size:var(--fs-xl);margin-top:var(--space-32);margin-bottom:var(--space-8)">Test widths</h3>
+          <p class="muted" style="font-size:var(--fs-sm)">These aren’t devices. They’re checkpoints. If it sings at 320, 375 is easy. If it only works at 1024, start over.</p>
+          <ul class="bp-grid">
+            <li class="bp-card">
+              <span class="bp-size">320</span>
+              <span class="bp-name">Floor</span>
+              <span class="bp-note">Narrowest we promise. One column. No sideways scroll.</span>
+            </li>
+            <li class="bp-card">
+              <span class="bp-size">375</span>
+              <span class="bp-name">Hand</span>
+              <span class="bp-note">Common phone. Type measure, tap targets, stacked hero.</span>
+            </li>
+            <li class="bp-card">
+              <span class="bp-size">768</span>
+              <span class="bp-name">Lap</span>
+              <span class="bp-note">Two-up grids. Still the top-nav, not the sidebar.</span>
+            </li>
+            <li class="bp-card">
+              <span class="bp-size">1024+</span>
+              <span class="bp-name">Desk</span>
+              <span class="bp-note">Sticky side-nav, wider measure, lockups in a row.</span>
+            </li>
           </ul>
         </section>
 
         <!-- ========== COLOR ========== -->
         <section id="color" class="ds-section" aria-labelledby="color-title">
-          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 03</p>
+          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 04</p>
           <h2 id="color-title">Color</h2>
           <p class="lede">All UI sits on warm paper (or night paper). Accents behave like inks, stickers, and stamps. Swatch hexes follow the active theme — see <a class="text-link" href="#theming">Theming</a>.</p>
 
@@ -269,7 +356,7 @@
 
         <!-- ========== THEMING ========== -->
         <section id="theming" class="ds-section" aria-labelledby="theming-title">
-          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 04</p>
+          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 05</p>
           <h2 id="theming-title">Theming</h2>
           <p class="lede">One token sheet, two papers. Light is cream (the default). Dark is mid-century night paper — warm ink field, soft cream type, same sticker accents. Not neon SaaS.</p>
 
@@ -296,6 +383,7 @@
 
           <h3 style="font-size:var(--fs-xl);margin-top:var(--space-32);margin-bottom:var(--space-8)">How tokens map</h3>
           <p class="muted" style="font-size:var(--fs-sm)">Color custom properties swap under <code>[data-theme="dark"]</code>. Type, space, radius, and stroke weights stay put. Components should consume vars — never a raw hex — so they follow the theme.</p>
+          <div class="table-scroll">
           <table class="theme-map">
             <thead>
               <tr>
@@ -361,6 +449,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
 
           <h3 style="font-size:var(--fs-xl);margin-top:var(--space-32);margin-bottom:var(--space-8)">Dark rules</h3>
           <div class="rules">
@@ -401,7 +490,7 @@
 
         <!-- ========== TYPOGRAPHY ========== -->
         <section id="typography" class="ds-section" aria-labelledby="type-title">
-          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 05</p>
+          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 06</p>
           <h2 id="type-title">Typography</h2>
           <p class="lede">Three families. No Inter. No fourth face without a reason.</p>
 
@@ -430,6 +519,7 @@
             <p class="spec-body">AtomicBytes builds web and mobile products that feel good to use—and hold up over time. Small-team energy, serious craft.</p>
           </div>
 
+          <div class="table-scroll">
           <table class="scale-table">
             <thead>
               <tr>
@@ -481,11 +571,12 @@
               </tr>
             </tbody>
           </table>
+          </div>
         </section>
 
         <!-- ========== SPACE ========== -->
         <section id="space" class="ds-section" aria-labelledby="space-title">
-          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 06</p>
+          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 07</p>
           <h2 id="space-title">Space · radius · stroke</h2>
           <p class="lede">Strict scale. Chunky irregular corners. Physical strokes and stamp shadows — never blurry drops.</p>
 
@@ -548,7 +639,7 @@
 
         <!-- ========== LOGO ========== -->
         <section id="logo" class="ds-section" aria-labelledby="logo-title">
-          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 07</p>
+          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 08</p>
           <h2 id="logo-title">Logo</h2>
           <p class="lede">Three lockups. The smirking Bohr mark is the brand; Sixtyfour Convergence is the name. Keep them on cream, never glow them.</p>
 
@@ -693,7 +784,7 @@
 
         <!-- ========== CHARACTERS ========== -->
         <section id="characters" class="ds-section" aria-labelledby="characters-title">
-          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 08</p>
+          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 09</p>
           <h2 id="characters-title">Characters</h2>
           <p class="lede">Five system assets. Logo mark for identity; full-body cast for personality; geometric mark for trademark moments. One hero character per view. Lab Tech is rejected — do not ship it.</p>
 
@@ -777,7 +868,7 @@
 
           <h3 style="font-size:var(--fs-xl);margin-top:var(--space-32)">Usage matrix</h3>
           <p class="muted" style="font-size:var(--fs-sm);margin-top:var(--space-8)">Pick one lead. Accents are stickers, not glows. Never stretch to fill a frame.</p>
-          <div style="overflow-x:auto">
+          <div class="table-scroll">
           <table class="matrix-table">
             <thead>
               <tr>
@@ -851,7 +942,7 @@
 
         <!-- ========== ICONS / DOODLES ========== -->
         <section id="icons" class="ds-section" aria-labelledby="icons-title">
-          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 09</p>
+          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 10</p>
           <h2 id="icons-title">Icons · doodles</h2>
           <p class="lede">A small drawing language, not an icon font. Same ink as the rest of the system — geometric metaphors that could live on a workshop card.</p>
 
@@ -934,7 +1025,7 @@
 
         <!-- ========== MOTION ========== -->
         <section id="motion" class="ds-section" aria-labelledby="motion-title">
-          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 10</p>
+          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 11</p>
           <h2 id="motion-title">Motion</h2>
           <p class="lede">Slow orbits, tiny stamp lifts. Nothing pulses. If the user asked for less motion, give them stillness.</p>
 
@@ -998,7 +1089,7 @@
 
         <!-- ========== COMPONENTS ========== -->
         <section id="components" class="ds-section" aria-labelledby="components-title">
-          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 11</p>
+          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 12</p>
           <h2 id="components-title">Components</h2>
           <p class="lede">Live recipes using the tokens. Chunky ink outline, stamp shadow, coral fill primary — the button the user liked.</p>
 
@@ -1125,7 +1216,7 @@
 
         <!-- ========== CODE ========== -->
         <section id="code" class="ds-section" aria-labelledby="code-title">
-          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 12</p>
+          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 13</p>
           <h2 id="code-title">Code</h2>
           <p class="lede">How technical posts show snippets. Live blocks, not IDE screenshots. See them composed in <a class="text-link" href="#blog">Blog example</a>.</p>
 
@@ -1220,7 +1311,7 @@
 
         <!-- ========== QUOTES ========== -->
         <section id="quotes" class="ds-section" aria-labelledby="quotes-title">
-          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 13</p>
+          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 14</p>
           <h2 id="quotes-title">Quotes</h2>
           <p class="lede">Pull quotes for blog posts. Ink on paper — not a gray Medium bar. Composed with code in <a class="text-link" href="#blog">Blog example</a>.</p>
 
@@ -1270,7 +1361,7 @@
 
         <!-- ========== BLOG EXAMPLE ========== -->
         <section id="blog" class="ds-section" aria-labelledby="blog-title">
-          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 14</p>
+          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 15</p>
           <h2 id="blog-title">Blog example</h2>
           <p class="lede">A composed specimen — lorem in the paragraphs, real recipes for quotes and snippets. Not a live Issue; the magazine tray stays empty on purpose.</p>
 
@@ -1335,7 +1426,7 @@
 
         <!-- ========== VOICE ========== -->
         <section id="voice" class="ds-section" aria-labelledby="voice-title">
-          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 15</p>
+          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 16</p>
           <h2 id="voice-title">Voice</h2>
           <p class="lede">The system is visual — keep the copy as written. Small-team craft, not agency theater.</p>
 
@@ -1367,7 +1458,7 @@
 
         <!-- ========== ADOPTION ========== -->
         <section id="adoption" class="ds-section" aria-labelledby="adoption-title">
-          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 16</p>
+          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 17</p>
           <h2 id="adoption-title">Adoption</h2>
           <p class="lede">How to use <code>tokens.css</code> in a future site. This design-system folder is the source of truth before the marketing rebuild.</p>
 
@@ -1400,6 +1491,12 @@
               <div>
                 <strong>Place characters with intent</strong>
                 <p>AtomicByte for identity; full cast for personality; AtomicMark for trademark. Never Lab Tech.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Start from the pocket</strong>
+                <p>Mobile-first CSS, ~44px taps, no sideways page scroll. If the future site isn’t usable at 320, it isn’t using this system. See <a class="text-link" href="#responsive">Responsiveness</a>.</p>
               </div>
             </li>
           </ol>

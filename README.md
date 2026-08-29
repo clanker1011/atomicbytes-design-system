@@ -17,6 +17,7 @@ A self-contained, polished documentation site for the AtomicBytes brand:
 - Coral primary, mint / cobalt / yolk accents as stickers
 - Sixtyfour Convergence · Fraunces · Figtree
 - Chunky ink-outline buttons with stamp shadows (the recipe the user liked)
+- Mobile-first layout (320px floor) — the site is the spec, so it has to fit the pocket
 
 Open `index.html` in a browser. No build step.
 
@@ -39,21 +40,22 @@ Upstream references (do not duplicate as truth):
 ## Sections
 
 1. **Intro** — what the system is for
-2. **Principles** — atomic optimism, ink on paper, stickers not glows, craft not circus
-3. **Color** — swatches with hex + token names + do/don’t (hexes follow the active theme)
-4. **Theming** — light / night-paper tokens, toggle + `localStorage`, dark rules
-5. **Typography** — three families + scale
-6. **Space** — spacing scale, radius, stroke, stamp shadow
-7. **Logo** — mark / mark+wordmark / wordmark lockups, clearspace (½ W), min sizes, don’ts
-8. **Characters** — gallery plus usage matrix (who, when, min size)
-9. **Icons / doodles** — 2–2.5px ink stroke samples (not an icon font)
-10. **Motion** — orbits 18–24s linear, stamp hover lift, reduced-motion
-11. **Components** — Button, Card, Stamp, Nav chip, Focus, Links, Issue 00 tray, Field + Say hi
-12. **Code** — inline, fenced TS, YAML/JSON config, terminal, filename tabs, short vs noisy
-13. **Quotes** — body quote (ink rule) and callout (mint stamp bar, Fraunces)
-14. **Blog example** — composed specimen post using quotes + snippets (not a live Issue)
-15. **Voice** — tone notes from existing copy
-16. **Adoption** — how to use `tokens.css` on a future site
+2. **Principles** — atomic optimism, ink on paper, stickers not glows, craft not circus, fits the pocket
+3. **Responsiveness** — why it matters, mobile-first as default, fluid type/space, 44px taps, no sideways scroll, test at 320 / 375 / 768 / 1024+
+4. **Color** — swatches with hex + token names + do/don’t (hexes follow the active theme)
+5. **Theming** — light / night-paper tokens, toggle + `localStorage`, dark rules
+6. **Typography** — three families + scale
+7. **Space** — spacing scale, radius, stroke, stamp shadow
+8. **Logo** — mark / mark+wordmark / wordmark lockups, clearspace (½ W), min sizes, don’ts
+9. **Characters** — gallery plus usage matrix (who, when, min size)
+10. **Icons / doodles** — 2–2.5px ink stroke samples (not an icon font)
+11. **Motion** — orbits 18–24s linear, stamp hover lift, reduced-motion
+12. **Components** — Button, Card, Stamp, Nav chip, Focus, Links, Issue 00 tray, Field + Say hi
+13. **Code** — inline, fenced TS, YAML/JSON config, terminal, filename tabs, short vs noisy
+14. **Quotes** — body quote (ink rule) and callout (mint stamp bar, Fraunces)
+15. **Blog example** — composed specimen post using quotes + snippets (not a live Issue)
+16. **Voice** — tone notes from existing copy
+17. **Adoption** — how to use `tokens.css` on a future site
 
 ## Characters (expected filenames)
 
@@ -86,6 +88,7 @@ If a PNG is missing, the page shows a dashed “Asset pending” placeholder for
 3. Replace utility colors; delete neon SaaS variables. Keep cream + night-paper themes from this sheet.
 4. Rebuild components from the recipes on this page
 5. Keep copy as written — the system is visual
+6. Build mobile-first — 44px taps, no document sideways scroll, usable at 320
 
 ## Out of scope
 

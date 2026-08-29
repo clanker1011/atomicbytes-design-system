@@ -123,6 +123,8 @@
   --wrap: min(1080px, calc(100% - 48px));
   --nav-width: 220px;
   --ds-max: 1440px;
+  --tap: 44px;              /* min touch target */
+  --nav-sticky-h: 7.5rem;   /* mobile stacked header; desk uses side-nav */
 
   /* ---------- Motion ---------- */
   /* Orbits stay slow and linear. Stamp hover is a 1–2px lift, not a bounce. */
