@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-labelledby="t d">
+  <title id="t">Human poster mark</title>
+  <desc id="d">Bold mid-century poster plate with the single word HUMAN.</desc>
+  <rect width="320" height="200" fill="#F6F1E8"/>
+  <rect x="16" y="16" width="288" height="168" fill="#FFD84A" stroke="#1C1915" stroke-width="4"/>
+  <!-- crop marks -->
+  <g stroke="#1C1915" stroke-width="2" stroke-linecap="round">
+    <path d="M8 28 H16 M28 8 V16"/>
+    <path d="M304 28 H312 M292 8 V16"/>
+    <path d="M8 172 H16 M28 184 V192"/>
+    <path d="M304 172 H312 M292 184 V192"/>
+  </g>
+  <text x="160" y="122" text-anchor="middle" fill="#1C1915"
+        font-family="Figtree, Helvetica Neue, Arial Black, sans-serif"
+        font-weight="900" font-size="72" letter-spacing="0.02em">HUMAN</text>
+  <circle cx="268" cy="152" r="9" fill="#FF5B3C" stroke="#1C1915" stroke-width="2.5"/>
+</svg>
