@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F6F1E8">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="AtomicBytes design system — tokens, components, characters, and voice for the mid-century atomic brand.">
+  <title>AtomicBytes · Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="ds.css">
+</head>
+<body id="top">
+  <div class="grain" aria-hidden="true"></div>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="top-nav" aria-label="Sections">
+    <div class="top-nav-inner">
+      <a class="logo-type" href="#intro">AtomicBytes DS</a>
+      <ol class="top-nav-links">
+        <li><a href="#intro">Intro</a></li>
+        <li><a href="#principles">Principles</a></li>
+        <li><a href="#color">Color</a></li>
+        <li><a href="#typography">Type</a></li>
+        <li><a href="#space">Space</a></li>
+        <li><a href="#components">Components</a></li>
+        <li><a href="#characters">Characters</a></li>
+        <li><a href="#voice">Voice</a></li>
+        <li><a href="#adoption">Adoption</a></li>
+      </ol>
+    </div>
+  </header>
+
+  <div class="shell">
+    <nav class="side-nav" aria-label="Design system">
+      <a class="nav-brand" href="#intro">
+        <span class="logo-type">AtomicBytes</span>
+        <span class="nav-sub">Design System</span>
+      </a>
+      <ol>
+        <li><a href="#intro"><span class="n">01</span> Intro</a></li>
+        <li><a href="#principles"><span class="n">02</span> Principles</a></li>
+        <li><a href="#color"><span class="n">03</span> Color</a></li>
+        <li><a href="#typography"><span class="n">04</span> Typography</a></li>
+        <li><a href="#space"><span class="n">05</span> Space</a></li>
+        <li><a href="#components"><span class="n">06</span> Components</a></li>
+        <li><a href="#characters"><span class="n">07</span> Characters</a></li>
+        <li><a href="#voice"><span class="n">08</span> Voice</a></li>
+        <li><a href="#adoption"><span class="n">09</span> Adoption</a></li>
+      </ol>
+      <p class="nav-foot">
+        <strong>Source of truth</strong><br>
+        Before the marketing rebuild. Steal tokens + recipes, not layout chrome.
+      </p>
+    </nav>
+
+    <div class="content">
+      <main id="main">
+
+        <!-- ========== INTRO ========== -->
+        <section id="intro" class="ds-section" aria-labelledby="intro-title">
+          <div class="intro-hero">
+            <span class="intro-stamp">v0 · print lab</span>
+            <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> Design system</p>
+            <h1 id="intro-title">Tokens, type, and characters for <em>AtomicBytes.</em></h1>
+            <p class="lede" style="margin-top: var(--space-24)">
+              This site is the working design system — not the marketing homepage.
+              Use it to review the cream / ink / coral world, poke the chunky buttons,
+              and see which mascot belongs where before we rebuild the live site.
+            </p>
+            <div class="intro-meta" aria-label="Brand inks">
+              <span><i style="background:var(--paper)"></i> paper</span>
+              <span><i style="background:var(--ink)"></i> ink</span>
+              <span><i style="background:var(--coral)"></i> coral</span>
+              <span><i style="background:var(--mint)"></i> mint</span>
+              <span><i style="background:var(--cobalt)"></i> cobalt</span>
+              <span><i style="background:var(--yolk)"></i> yolk</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== PRINCIPLES ========== -->
+        <section id="principles" class="ds-section" aria-labelledby="principles-title">
+          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 02</p>
+          <h2 id="principles-title">Principles</h2>
+          <p class="lede">Whimsical, still craft-serious. A toy workshop that ships — not a circus, not dark SaaS.</p>
+          <ul class="principle-grid">
+            <li class="principle">
+              <span class="tag">mood</span>
+              <h3>Atomic optimism</h3>
+              <p>Mid-century poster energy. Confident smirk, not corporate grin. Hope with ink under the fingernails.</p>
+            </li>
+            <li class="principle">
+              <span class="tag">surface</span>
+              <h3>Ink on paper</h3>
+              <p>Warm cream field, warm near-black type. Everything sits on paper — never a black void with neon fog.</p>
+            </li>
+            <li class="principle">
+              <span class="tag">accents</span>
+              <h3>Stickers, not glows</h3>
+              <p>Coral, mint, cobalt, yolk fill shapes that keep an ink outline. No blurry drops, no glass, no rainbow haze.</p>
+            </li>
+            <li class="principle">
+              <span class="tag">tone</span>
+              <h3>Craft, not circus</h3>
+              <p>Fun is allowed. Clowning is not. One accent per component; two at most. Serious studio with a wink.</p>
+            </li>
+          </ul>
+        </section>
+
+        <!-- ========== COLOR ========== -->
+        <section id="color" class="ds-section" aria-labelledby="color-title">
+          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 03</p>
+          <h2 id="color-title">Color</h2>
+          <p class="lede">All UI sits on warm paper. Accents behave like inks, stickers, and stamps.</p>
+
+          <ul class="swatch-grid">
+            <li class="swatch">
+              <div class="chip" style="background:var(--paper)"></div>
+              <div class="meta">
+                <span class="name">Paper</span>
+                <span class="hex">#F6F1E8</span>
+                <span class="token">--paper</span>
+              </div>
+            </li>
+            <li class="swatch">
+              <div class="chip" style="background:var(--paper-shade)"></div>
+              <div class="meta">
+                <span class="name">Paper shade</span>
+                <span class="hex">#EBE4D6</span>
+                <span class="token">--paper-shade</span>
+              </div>
+            </li>
+            <li class="swatch">
+              <div class="chip" style="background:var(--ink)"></div>
+              <div class="meta">
+                <span class="name">Ink</span>
+                <span class="hex">#1C1915</span>
+                <span class="token">--ink</span>
+              </div>
+            </li>
+            <li class="swatch">
+              <div class="chip" style="background:var(--muted)"></div>
+              <div class="meta">
+                <span class="name">Muted</span>
+                <span class="hex">#5A544A</span>
+                <span class="token">--muted</span>
+              </div>
+            </li>
+            <li class="swatch">
+              <div class="chip" style="background:var(--coral)"></div>
+              <div class="meta">
+                <span class="name">Coral</span>
+                <span class="hex">#FF5B3C</span>
+                <span class="token">--coral / --accent</span>
+              </div>
+            </li>
+            <li class="swatch">
+              <div class="chip" style="background:var(--mint)"></div>
+              <div class="meta">
+                <span class="name">Mint</span>
+                <span class="hex">#2EE6A6</span>
+                <span class="token">--mint / --accent-3</span>
+              </div>
+            </li>
+            <li class="swatch">
+              <div class="chip" style="background:var(--cobalt)"></div>
+              <div class="meta">
+                <span class="name">Cobalt</span>
+                <span class="hex">#4B6BFF</span>
+                <span class="token">--cobalt / --focus</span>
+              </div>
+            </li>
+            <li class="swatch">
+              <div class="chip" style="background:var(--yolk)"></div>
+              <div class="meta">
+                <span class="name">Yolk</span>
+                <span class="hex">#FFD84A</span>
+                <span class="token">--yolk / --accent-4</span>
+              </div>
+            </li>
+            <li class="swatch">
+              <div class="chip" style="background:var(--surface)"></div>
+              <div class="meta">
+                <span class="name">Surface</span>
+                <span class="hex">#FFFBF3</span>
+                <span class="token">--surface</span>
+              </div>
+            </li>
+            <li class="swatch">
+              <div class="chip" style="background:var(--surface-inset)"></div>
+              <div class="meta">
+                <span class="name">Surface inset</span>
+                <span class="hex">#E8E0D0</span>
+                <span class="token">--surface-inset</span>
+              </div>
+            </li>
+          </ul>
+
+          <div class="rules">
+            <div class="rule-card do">
+              <h3><span class="badge do">Do</span> Ink rules</h3>
+              <ul>
+                <li>Body text is always ink on paper or surface</li>
+                <li>Accent fills carry ink type <em>and</em> an ink stroke</li>
+                <li>Links: ink type, cobalt underline</li>
+                <li>Focus: 3px cobalt ring, 3px offset</li>
+                <li>One accent per component (two max)</li>
+              </ul>
+            </div>
+            <div class="rule-card dont">
+              <h3><span class="badge dont">Don’t</span> Old habits</h3>
+              <ul>
+                <li>Mint or yolk as body text</li>
+                <li>White-on-coral (fails contrast)</li>
+                <li>Neon glows, glass, dark SaaS voids</li>
+                <li>Revive #0b0c10 / cyan / violet / pink</li>
+                <li>Cobalt as 16px link text color</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== TYPOGRAPHY ========== -->
+        <section id="typography" class="ds-section" aria-labelledby="type-title">
+          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 04</p>
+          <h2 id="type-title">Typography</h2>
+          <p class="lede">Three families. No Inter. No fourth face without a reason.</p>
+
+          <div class="type-card">
+            <div class="type-label">
+              <span class="family">Sixtyfour Convergence</span>
+              <span class="role">Brand / wordmark · keep ~14–18px</span>
+            </div>
+            <p class="spec-brand">AtomicBytes</p>
+            <p class="spec-brand" style="margin-top: var(--space-8); opacity: 0.7;">ISSUE 00 · AIR MAIL · AB</p>
+          </div>
+
+          <div class="type-card">
+            <div class="type-label">
+              <span class="family">Fraunces</span>
+              <span class="role">Display · SOFT 60 · WONK 1 · weight 500–700</span>
+            </div>
+            <p class="spec-display">Make software <em>feel good.</em></p>
+          </div>
+
+          <div class="type-card">
+            <div class="type-label">
+              <span class="family">Figtree</span>
+              <span class="role">UI / body · 16px · lh 1.55 · weight 400–700</span>
+            </div>
+            <p class="spec-body">AtomicBytes builds web and mobile products that feel good to use—and hold up over time. Small-team energy, serious craft.</p>
+          </div>
+
+          <table class="scale-table">
+            <thead>
+              <tr>
+                <th>Token</th>
+                <th>Size</th>
+                <th>Specimen</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>--fs-xs</code></td>
+                <td>12</td>
+                <td><span class="scale-sample" style="font-size:var(--fs-xs);font-weight:600">Rubber stamp label</span></td>
+              </tr>
+              <tr>
+                <td><code>--fs-sm</code></td>
+                <td>14</td>
+                <td><span class="scale-sample" style="font-size:var(--fs-sm);font-weight:600">Nav &amp; meta</span></td>
+              </tr>
+              <tr>
+                <td><code>--fs-md</code></td>
+                <td>16</td>
+                <td><span class="scale-sample" style="font-size:var(--fs-md)">Body copy default</span></td>
+              </tr>
+              <tr>
+                <td><code>--fs-lg</code></td>
+                <td>18</td>
+                <td><span class="scale-sample" style="font-size:var(--fs-lg)">Lede &amp; studio</span></td>
+              </tr>
+              <tr>
+                <td><code>--fs-xl</code></td>
+                <td>22</td>
+                <td><span class="scale-sample" style="font-size:var(--fs-xl);font-family:var(--font-display);font-variation-settings:'SOFT' 60,'WONK' 1;font-weight:600">Card title</span></td>
+              </tr>
+              <tr>
+                <td><code>--fs-2xl</code></td>
+                <td>28</td>
+                <td><span class="scale-sample" style="font-size:var(--fs-2xl);font-family:var(--font-display);font-variation-settings:'SOFT' 60,'WONK' 1;font-weight:600">Section sub</span></td>
+              </tr>
+              <tr>
+                <td><code>--fs-3xl</code></td>
+                <td>38</td>
+                <td><span class="scale-sample" style="font-size:var(--fs-3xl);font-family:var(--font-display);font-variation-settings:'SOFT' 60,'WONK' 1;font-weight:600">Big header</span></td>
+              </tr>
+              <tr>
+                <td><code>--fs-4xl</code></td>
+                <td>56</td>
+                <td><span class="scale-sample" style="font-size:clamp(1.75rem,4vw,3.5rem);font-family:var(--font-display);font-variation-settings:'SOFT' 60,'WONK' 1;font-weight:600">Display</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- ========== SPACE ========== -->
+        <section id="space" class="ds-section" aria-labelledby="space-title">
+          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 05</p>
+          <h2 id="space-title">Space · radius · stroke</h2>
+          <p class="lede">Strict scale. Chunky irregular corners. Physical strokes and stamp shadows — never blurry drops.</p>
+
+          <h3 style="font-size:var(--fs-xl);margin-top:var(--space-32);margin-bottom:var(--space-8)">Space</h3>
+          <p class="muted" style="font-size:var(--fs-sm)">4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 — padding and gaps snap to it.</p>
+          <div class="token-rows" role="list">
+            <div class="token-row" role="listitem"><span class="label">--space-4</span><div class="bar-wrap"><div class="bar" style="width:4px"></div></div><span class="val">4px</span></div>
+            <div class="token-row" role="listitem"><span class="label">--space-8</span><div class="bar-wrap"><div class="bar" style="width:8px"></div></div><span class="val">8px</span></div>
+            <div class="token-row" role="listitem"><span class="label">--space-12</span><div class="bar-wrap"><div class="bar" style="width:12px"></div></div><span class="val">12px</span></div>
+            <div class="token-row" role="listitem"><span class="label">--space-16</span><div class="bar-wrap"><div class="bar" style="width:16px"></div></div><span class="val">16px</span></div>
+            <div class="token-row" role="listitem"><span class="label">--space-24</span><div class="bar-wrap"><div class="bar" style="width:24px"></div></div><span class="val">24px</span></div>
+            <div class="token-row" role="listitem"><span class="label">--space-32</span><div class="bar-wrap"><div class="bar" style="width:32px"></div></div><span class="val">32px</span></div>
+            <div class="token-row" role="listitem"><span class="label">--space-48</span><div class="bar-wrap"><div class="bar" style="width:48px"></div></div><span class="val">48px</span></div>
+            <div class="token-row" role="listitem"><span class="label">--space-64</span><div class="bar-wrap"><div class="bar" style="width:64px"></div></div><span class="val">64px</span></div>
+          </div>
+
+          <h3 style="font-size:var(--fs-xl);margin-top:var(--space-32);margin-bottom:var(--space-8)">Radius</h3>
+          <ul class="radius-demo">
+            <li>
+              <div class="shape" style="border-radius:var(--radius-sm)"></div>
+              <span class="demo-cap">--radius-sm</span>
+            </li>
+            <li>
+              <div class="shape" style="border-radius:var(--radius-md)"></div>
+              <span class="demo-cap">--radius-md</span>
+            </li>
+            <li>
+              <div class="shape" style="border-radius:var(--radius-lg)"></div>
+              <span class="demo-cap">--radius-lg</span>
+            </li>
+            <li>
+              <div class="shape" style="border-radius:var(--radius-chunky)"></div>
+              <span class="demo-cap">--radius-chunky</span>
+            </li>
+            <li>
+              <div class="shape" style="border-radius:var(--radius-pill);width:96px"></div>
+              <span class="demo-cap">--radius-pill</span>
+            </li>
+          </ul>
+
+          <h3 style="font-size:var(--fs-xl);margin-top:var(--space-32);margin-bottom:var(--space-8)">Stroke &amp; stamp shadow</h3>
+          <ul class="stroke-demo">
+            <li>
+              <div class="shape" style="border-width:var(--stroke-thin)"></div>
+              <span class="demo-cap">thin 1.5</span>
+            </li>
+            <li>
+              <div class="shape" style="border-width:var(--stroke)"></div>
+              <span class="demo-cap">stroke 2.5</span>
+            </li>
+            <li>
+              <div class="shape" style="border-width:var(--stroke-thick)"></div>
+              <span class="demo-cap">thick 3.5</span>
+            </li>
+          </ul>
+          <div class="stamp-shadow-demo" aria-hidden="true">stamp</div>
+          <p class="muted" style="font-size:var(--fs-sm);margin-top:var(--space-12)"><code>--shadow-stamp</code> = 3px 3px 0 ink. Hover lengthens; press shortens. No blur.</p>
+        </section>
+
+        <!-- ========== COMPONENTS ========== -->
+        <section id="components" class="ds-section" aria-labelledby="components-title">
+          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 06</p>
+          <h2 id="components-title">Components</h2>
+          <p class="lede">Live recipes using the tokens. Chunky ink outline, stamp shadow, coral fill primary — the button the user liked.</p>
+
+          <div class="comp-block">
+            <h3>Button</h3>
+            <p class="comp-note">Figtree 600, ink outline, stamp shadow, chunky radius. Primary fills coral. Secondary is surface. Hover lifts 1px and lengthens the stamp.</p>
+            <div class="playground">
+              <a class="btn btn-fill" href="#adoption">Primary — Say hi</a>
+              <a class="btn btn-ghost" href="#characters">Secondary</a>
+              <a class="btn btn-yolk" href="#voice">Yolk accent</a>
+              <button class="btn btn-fill" type="button" disabled>Disabled</button>
+            </div>
+          </div>
+
+          <div class="comp-block">
+            <h3>Card</h3>
+            <p class="comp-note">Surface fill, thick ink outline, slight tilt. Optional mint strip, yolk sticker, or coral stamp label. Collage, not a 2×2 icon grid.</p>
+            <div class="playground" style="align-items:stretch">
+              <article class="card">
+                <span class="stamp">builds &amp; rebuilds</span>
+                <h4>Web &amp; mobile</h4>
+                <p>New builds, rebuilds, and the unglamorous work that makes apps last.</p>
+              </article>
+              <article class="card mint-strip">
+                <span class="sticker" aria-hidden="true">10%</span>
+                <span class="stamp mint-stamp">stays fun</span>
+                <h4>UI craft</h4>
+                <p>Design-sensitive implementation and the last 10% people notice.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="comp-block">
+            <h3>Stamp</h3>
+            <p class="comp-note">Tiny tracked Figtree or brand font, coral or ink outline, a degree or two of rotation.</p>
+            <div class="playground">
+              <span class="stamp">builds &amp; rebuilds</span>
+              <span class="stamp ink">the last 10%</span>
+              <span class="stamp mint-stamp">small on purpose</span>
+              <span class="stamp brand">independent · not everything</span>
+            </div>
+          </div>
+
+          <div class="comp-block">
+            <h3>Nav chip</h3>
+            <p class="comp-note">Ink type with cobalt underline on hover, or a pill chip for compact mobile nav.</p>
+            <div class="playground">
+              <a class="nav-chip" href="#intro">Work</a>
+              <a class="nav-chip" href="#principles">Studio</a>
+              <a class="nav-chip" href="#voice">Blog</a>
+              <a class="nav-chip-pill" href="#intro" aria-current="true">Intro</a>
+              <a class="nav-chip-pill" href="#color">Color</a>
+            </div>
+          </div>
+
+          <div class="comp-block">
+            <h3>Focus</h3>
+            <p class="comp-note">3px cobalt ring, 3px offset, visible on cream. Tab through the playground to feel it.</p>
+            <div class="playground focus-demo">
+              <span class="focus-ring-sample" tabindex="0" title="Sample focus ring">AB</span>
+              <a href="mailto:hello@atomicbytes.com">hello@atomicbytes.com</a>
+              <a class="btn btn-fill" href="#adoption">Focus me</a>
+            </div>
+          </div>
+
+          <div class="example-strip" aria-labelledby="example-title">
+            <div>
+              <span class="stamp">example strip</span>
+              <h3 id="example-title">Make software feel good.</h3>
+              <p class="muted" style="font-size:var(--fs-sm);max-width:40ch">A tiny system demo — not the marketing homepage. Same buttons, same mark, same paper.</p>
+              <div class="ctas">
+                <a class="btn btn-fill" href="mailto:hello@atomicbytes.com">Say hi →</a>
+                <a class="btn btn-ghost" href="#characters">Meet the cast</a>
+              </div>
+            </div>
+            <img class="example-mark" src="assets/characters/atomicbyte-mark.svg" width="120" height="120" alt="AtomicByte face mark — Bohr atom with a confident smirk">
+          </div>
+        </section>
+
+        <!-- ========== CHARACTERS ========== -->
+        <section id="characters" class="ds-section" aria-labelledby="characters-title">
+          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 07</p>
+          <h2 id="characters-title">Characters</h2>
+          <p class="lede">Five system assets. Logo mark for identity; full-body cast for personality; geometric mark for trademark moments. Lab Tech is rejected — do not ship it.</p>
+
+          <ul class="char-grid">
+            <li class="char-card primary">
+              <div class="char-art">
+                <span class="char-letter" aria-hidden="true">1</span>
+                <img src="assets/characters/atomicbyte.png" alt="AtomicByte — yellow atom face with three orbital rings and coral, mint, cobalt electrons" width="200" height="200" loading="lazy">
+              </div>
+              <div class="char-body">
+                <h3>AtomicByte</h3>
+                <span class="file">atomicbyte.png · atomicbyte-mark.svg</span>
+                <p>Primary logo atom / face mark. The smirking Bohr nucleus — three thick orbits, sticker electrons, yolk core with a face.</p>
+                <p class="char-usage">Use: wordmark lockups, favicon (keep the face), hero identity, default brand presence.</p>
+              </div>
+            </li>
+
+            <li class="char-card">
+              <div class="char-art">
+                <span class="char-letter" aria-hidden="true">2</span>
+                <img src="assets/characters/atom-salesman.png" alt="Atom Salesman — full-body atom mascot in a mint tuxedo, pointing upward" width="200" height="200" loading="lazy">
+              </div>
+              <div class="char-body">
+                <h3>Atom Salesman</h3>
+                <span class="file">atom-salesman.png</span>
+                <p>Full-body mascot. Mint tux, bow tie, pointing finger — mid-century ad energy for pitches and “say hi” moments.</p>
+                <p class="char-usage">Use: contact / CTA scenes, about, campaign spots. Not the default logo.</p>
+              </div>
+            </li>
+
+            <li class="char-card">
+              <div class="char-art">
+                <span class="char-letter" aria-hidden="true">3</span>
+                <img src="assets/characters/byte-bot.png" alt="Byte-Bot — mint robot mascot with an atom on its chest screen" width="200" height="200" loading="lazy">
+              </div>
+              <div class="char-body">
+                <h3>Byte-Bot</h3>
+                <span class="file">byte-bot.png</span>
+                <p>Robot mascot. Workshop helper — builds, rebuilds, shipping systems. Friendly hardware with an atom on the chest screen.</p>
+                <p class="char-usage">Use: product / craft / engineering stories. Pair with ink outlines on cream.</p>
+              </div>
+            </li>
+
+            <li class="char-card">
+              <div class="char-art">
+                <span class="char-letter" aria-hidden="true">4</span>
+                <img src="assets/characters/byte-rocket.png" alt="Byte Rocket — cartoon rocket with a face giving a thumbs-up, trailing atomic sparks" width="200" height="200" loading="lazy">
+              </div>
+              <div class="char-body">
+                <h3>Byte Rocket</h3>
+                <span class="file">byte-rocket.png</span>
+                <p>Rocket mascot. Launch energy — shipping, releases, “no surprise Fridays.” Atomic exhaust optional.</p>
+                <p class="char-usage">Use: launch announcements, shipping systems, blog covers about releases.</p>
+              </div>
+            </li>
+
+            <li class="char-card">
+              <div class="char-art">
+                <span class="char-letter" aria-hidden="true">5</span>
+                <img src="assets/characters/atomic-mark.png" alt="AtomicMark — geometric trademark atom with cobalt and mint diamond rays, no face" width="200" height="200" loading="lazy">
+              </div>
+              <div class="char-body">
+                <h3>AtomicMark</h3>
+                <span class="file">atomic-mark.png</span>
+                <p>Geometric trademark atom — no face. Cobalt / mint diamond rays, coral nucleus. Legal and formal identity.</p>
+                <p class="char-usage">Use: trademark, watermark, formal docs, small monograms where a face would shout.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="usage-callout">
+            <h3>When to use which</h3>
+            <ul>
+              <li><strong>Logo mark (AtomicByte + SVG)</strong> — default identity. Header, favicon, hero. Keep the face when you shrink it.</li>
+              <li><strong>Full characters (Salesman, Bot, Rocket)</strong> — personality beats. One at a time on a surface; don’t cast the whole crew in one card.</li>
+              <li><strong>Trademark (AtomicMark)</strong> — geometric, no face. Seals, legal, quiet corners.</li>
+              <li><strong>Rejected</strong> — Lab Tech. Do not include in the system or the live site.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ========== VOICE ========== -->
+        <section id="voice" class="ds-section" aria-labelledby="voice-title">
+          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 08</p>
+          <h2 id="voice-title">Voice</h2>
+          <p class="lede">The system is visual — keep the copy as written. Small-team craft, not agency theater.</p>
+
+          <div class="voice-grid">
+            <div class="voice-card yes">
+              <h3>Sounds like us</h3>
+              <blockquote>“Make software feel good.”</blockquote>
+              <ul>
+                <li>Small-team energy, serious craft</li>
+                <li>Independent · not everything</li>
+                <li>The last 10% people notice</li>
+                <li>No surprise Fridays</li>
+                <li>Trusted collaborators, no agency theater</li>
+              </ul>
+            </div>
+            <div class="voice-card no">
+              <h3>Not us</h3>
+              <blockquote style="opacity:0.45">“Synergize delightful outcomes.”</blockquote>
+              <ul>
+                <li>Generic SaaS template headlines</li>
+                <li>Invented blog posts to fill a tray</li>
+                <li>Hype without the craft behind it</li>
+                <li>Children’s-app cutesy or clowning</li>
+                <li>Dark-mode neon bravado</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== ADOPTION ========== -->
+        <section id="adoption" class="ds-section" aria-labelledby="adoption-title">
+          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 09</p>
+          <h2 id="adoption-title">Adoption</h2>
+          <p class="lede">How to use <code>tokens.css</code> in a future site. This design-system folder is the source of truth before the marketing rebuild.</p>
+
+          <ol class="steps">
+            <li>
+              <div>
+                <strong>Copy the tokens</strong>
+                <p>Bring <code>design-system/tokens.css</code> (or the <code>:root</code> block) into the real site as the single color/type/space source.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Load the three families</strong>
+                <p>Sixtyfour Convergence, Fraunces (opsz + wght), and Figtree from Google Fonts. Do not reintroduce Inter.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Replace utility colors</strong>
+                <p>Swap existing stylesheet colors for tokens. Delete dark-theme variables and neon accents.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Rebuild components from recipes</strong>
+                <p>Buttons, cards, stamps, focus — rebuild against this page rather than tinting old glass cards cream.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Place characters with intent</strong>
+                <p>AtomicByte for identity; full cast for personality; AtomicMark for trademark. Never Lab Tech.</p>
+              </div>
+            </li>
+          </ol>
+
+          <pre class="code-block" tabindex="0"><span class="c">&lt;!-- In the future marketing site --&gt;</span>
+<span class="k">&lt;link</span> <span class="s">rel</span>=<span class="s">"stylesheet"</span> <span class="s">href</span>=<span class="s">"/tokens.css"</span><span class="k">&gt;</span>
+
+<span class="c">/* Components consume semantic aliases */</span>
+.btn-fill {
+  background: <span class="s">var(--accent)</span>;       <span class="c">/* coral */</span>
+  color: <span class="s">var(--ink)</span>;
+  border: <span class="s">var(--stroke-thick)</span> solid <span class="s">var(--ink)</span>;
+  border-radius: <span class="s">var(--radius-chunky)</span>;
+  box-shadow: <span class="s">var(--shadow-stamp)</span>;
+}</pre>
+        </section>
+      </main>
+
+      <footer class="ds-foot">
+        <p class="rubber">© 2026 AtomicBytes LLC · DS</p>
+        <p class="domain">design-system · source of truth</p>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var links = Array.prototype.slice.call(
+        document.querySelectorAll('.side-nav a[href^="#"], .top-nav-links a[href^="#"]')
+      );
+      var sections = links
+        .map(function (a) { return document.querySelector(a.getAttribute('href')); })
+        .filter(Boolean);
+
+      function setCurrent(id) {
+        links.forEach(function (a) {
+          var match = a.getAttribute('href') === '#' + id;
+          if (match) a.setAttribute('aria-current', 'true');
+          else a.removeAttribute('aria-current');
+        });
+      }
+
+      if ('IntersectionObserver' in window && sections.length) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) setCurrent(entry.target.id);
+          });
+        }, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
+        sections.forEach(function (s) { io.observe(s); });
+      }
+
+      document.querySelectorAll('.char-art img').forEach(function (img) {
+        img.addEventListener('error', function () {
+          var file = (img.getAttribute('src') || '').split('/').pop();
+          var ph = document.createElement('div');
+          ph.className = 'placeholder';
+          ph.innerHTML = '<span>Asset pending<br><code style="border:none;background:transparent;color:inherit">' + file + '</code></span>';
+          img.replaceWith(ph);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

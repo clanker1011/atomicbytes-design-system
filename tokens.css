@@ -1,0 +1,94 @@
+/**
+ * AtomicBytes design tokens
+ * Source of truth for the design system site and (soon) the marketing rebuild.
+ *
+ * Mood: mid-century atomic optimism / toy workshop / risograph —
+ * inks on warm paper, not neon on black.
+ *
+ * Retired forever: #0b0c10, cyan #63e6ff, violet #a78bfa, pink #ff5fd1, Inter, glass.
+ *
+ * Accents (coral, mint, cobalt, yolk) behave like inks / stickers / stamps:
+ * they fill shapes that keep an ink outline. Do not use mint or yolk as text.
+ * Pair every accent fill with --ink type (or an ink stroke).
+ */
+
+:root {
+  /* ---------- Color ---------- */
+  /* Paper is cream with fiber, never flat white. Ink is warm near-black. */
+  --paper: #F6F1E8;
+  --paper-shade: #EBE4D6;
+  --ink: #1C1915;
+  --muted: #5A544A;
+  --line: #1C1915;
+  --coral: #FF5B3C;
+  --mint: #2EE6A6;
+  --cobalt: #4B6BFF;
+  --yolk: #FFD84A;
+  --surface: #FFFBF3;
+  --surface-inset: #E8E0D0;
+
+  /* Semantic aliases — prefer these in components */
+  --bg: var(--paper);
+  --text: var(--ink);
+  --text-muted: var(--muted);
+  --accent: var(--coral);     /* primary CTA, rubber stamps */
+  --accent-2: var(--cobalt);  /* focus rings, marker underlines */
+  --accent-3: var(--mint);    /* strips, collab marks */
+  --accent-4: var(--yolk);    /* stickers, atom nucleus */
+  --danger: var(--coral);
+  --focus: var(--cobalt);
+
+  /* ---------- Type ---------- */
+  --font-brand: "Sixtyfour Convergence", ui-monospace, "Cascadia Mono", monospace;
+  --font-display: "Fraunces", "Iowan Old Style", Palatino, Georgia, serif;
+  --font-body: "Figtree", "Source Sans 3", system-ui, sans-serif;
+
+  --fs-xs: 0.75rem;    /* 12 */
+  --fs-sm: 0.875rem;   /* 14 */
+  --fs-md: 1rem;       /* 16 */
+  --fs-lg: 1.125rem;   /* 18 */
+  --fs-xl: 1.375rem;   /* 22 */
+  --fs-2xl: 1.75rem;   /* 28 */
+  --fs-3xl: 2.375rem;  /* 38 */
+  --fs-4xl: 3.5rem;    /* 56 */
+  --fs-hero: clamp(2.5rem, 6.4vw, 5.15rem);
+
+  --lh-tight: 1.05;
+  --lh-snug: 1.22;
+  --lh-body: 1.55;
+  --lh-loose: 1.7;
+
+  --tracking-brand: 0.02em;
+  --tracking-label: 0.08em;
+
+  /* ---------- Space (4 / 8 / 12 / 16 / 24 / 32 / 48 / 64) ---------- */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+
+  /* ---------- Radius ---------- */
+  /* Chunky, slightly irregular. Prefer --radius-chunky on buttons. */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-chunky: 18px 24px 16px 22px;
+  --radius-pill: 999px;
+
+  /* ---------- Stroke ---------- */
+  --stroke-thin: 1.5px;
+  --stroke: 2.5px;
+  --stroke-thick: 3.5px;
+  --shadow-stamp: 3px 3px 0 var(--ink);
+  --shadow-stamp-hover: 4px 4px 0 var(--ink);
+  --shadow-stamp-press: 1px 1px 0 var(--ink);
+
+  /* ---------- Layout (DS site helpers) ---------- */
+  --wrap: min(1080px, calc(100% - 48px));
+  --nav-width: 220px;
+  --ds-max: 1440px;
+}
