@@ -27,6 +27,15 @@
   --surface: #FFFBF3;
   --surface-inset: #E8E0D0;
 
+  /* Code slabs — warm ink, not VS Code purple. Paper type on ink reads AAA. */
+  --code-bg: #1C1915;
+  --code-fg: #F6F1E8;
+  --code-comment: #C4B8A8;
+  --code-keyword: #4B6BFF;   /* cobalt */
+  --code-string: #2EE6A6;    /* mint */
+  --code-fn: #FF5B3C;        /* coral */
+  --code-num: #FFD84A;       /* yolk */
+
   /* Semantic aliases — prefer these in components */
   --bg: var(--paper);
   --text: var(--ink);
@@ -42,6 +51,7 @@
   --font-brand: "Sixtyfour Convergence", ui-monospace, "Cascadia Mono", monospace;
   --font-display: "Fraunces", "Iowan Old Style", Palatino, Georgia, serif;
   --font-body: "Figtree", "Source Sans 3", system-ui, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", "SF Mono", Menlo, Consolas, monospace;
 
   --fs-xs: 0.75rem;    /* 12 */
   --fs-sm: 0.875rem;   /* 14 */

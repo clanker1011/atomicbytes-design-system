@@ -47,8 +47,11 @@ Upstream references (do not duplicate as truth):
 8. **Icons / doodles** — 2–2.5px ink stroke samples (not an icon font)
 9. **Motion** — orbits 18–24s linear, stamp hover lift, reduced-motion
 10. **Components** — Button, Card, Stamp, Nav chip, Focus, Links, Issue 00 tray, Field + Say hi
-11. **Voice** — tone notes from existing copy
-12. **Adoption** — how to use `tokens.css` on a future site
+11. **Code** — inline, fenced TS, YAML/JSON config, terminal, filename tabs, short vs noisy
+12. **Quotes** — body quote (ink rule) and callout (mint stamp bar, Fraunces)
+13. **Blog example** — composed specimen post using quotes + snippets (not a live Issue)
+14. **Voice** — tone notes from existing copy
+15. **Adoption** — how to use `tokens.css` on a future site
 
 ## Characters (expected filenames)
 
