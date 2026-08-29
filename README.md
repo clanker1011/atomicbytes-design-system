@@ -42,10 +42,13 @@ Upstream references (do not duplicate as truth):
 3. **Color** — swatches with hex + token names + do/don’t
 4. **Typography** — three families + scale
 5. **Space** — spacing scale, radius, stroke, stamp shadow
-6. **Components** — Button, Card, Stamp, Nav chip, Focus (live) + small example strip
-7. **Characters** — gallery of the five system assets
-8. **Voice** — tone notes from existing copy
-9. **Adoption** — how to use `tokens.css` on a future site
+6. **Logo** — mark / mark+wordmark / wordmark lockups, clearspace (½ W), min sizes, don’ts
+7. **Characters** — gallery plus usage matrix (who, when, min size)
+8. **Icons / doodles** — 2–2.5px ink stroke samples (not an icon font)
+9. **Motion** — orbits 18–24s linear, stamp hover lift, reduced-motion
+10. **Components** — Button, Card, Stamp, Nav chip, Focus, Links, Issue 00 tray, Field + Say hi
+11. **Voice** — tone notes from existing copy
+12. **Adoption** — how to use `tokens.css` on a future site
 
 ## Characters (expected filenames)
 
@@ -66,9 +69,10 @@ If a PNG is missing, the page shows a dashed “Asset pending” placeholder for
 
 ### Usage quick rules
 
-- **Logo mark (AtomicByte)** — default identity, header, favicon (keep the face)
-- **Full characters** — personality beats; one at a time
-- **AtomicMark** — trademark / formal / quiet corners
+- **Logo mark (AtomicByte)** — default identity, header, favicon (keep the face). Clearspace = ½ mark width. Don’t stretch, glow, or recolor the nucleus.
+- **Full characters** — personality beats; one hero per view; don’t stretch
+- **AtomicMark** — trademark / formal / quiet corners / small monograms
+- **Accents** — stickers, not glows
 
 ## Adopting on the live site
 

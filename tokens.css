@@ -91,4 +91,12 @@
   --wrap: min(1080px, calc(100% - 48px));
   --nav-width: 220px;
   --ds-max: 1440px;
+
+  /* ---------- Motion ---------- */
+  /* Orbits stay slow and linear. Stamp hover is a 1–2px lift, not a bounce. */
+  --orbit-fast: 18s;
+  --orbit-mid: 22s;
+  --orbit-slow: 24s;
+  --motion-lift: 1px;
+  --motion-lift-card: 2px;
 }
