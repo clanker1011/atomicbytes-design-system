@@ -1995,6 +1995,58 @@ footer.ds-foot {
   min-width: 0;
 }
 
+
+/* ---------- Labels (authorship marks) ---------- */
+.label-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-16);
+  margin-top: var(--space-24);
+  list-style: none;
+}
+.label-card {
+  background: var(--surface);
+  border: var(--stroke) solid var(--ink);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-stamp);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.label-art {
+  background: var(--print-paper, #F6F1E8);
+  border-bottom: var(--stroke) solid var(--ink);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  padding: var(--space-24);
+}
+.label-art img {
+  width: min(280px, 100%);
+  height: auto;
+  object-fit: contain;
+}
+.label-body {
+  padding: var(--space-16) var(--space-24) var(--space-24);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  min-width: 0;
+}
+.label-body h3 {
+  font-size: var(--fs-xl);
+  margin: 0;
+}
+.label-body .file {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}
+.label-body p { font-size: var(--fs-sm); }
+
 /* ---------- Mobile-first breakpoints ---------- */
 /* Default styles above are the 320px floor.
    480  — slightly roomier phone / small doodle grids
@@ -2035,7 +2087,8 @@ footer.ds-foot {
   .code-compare,
   .pair-grid,
   .lockup-grid,
-  .dont-grid { grid-template-columns: 1fr 1fr; }
+  .dont-grid,
+  .label-grid { grid-template-columns: 1fr 1fr; }
   .doodle-grid { grid-template-columns: repeat(3, 1fr); }
   .bp-grid { grid-template-columns: repeat(4, 1fr); }
   .token-row {

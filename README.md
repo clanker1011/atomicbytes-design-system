@@ -48,14 +48,15 @@ Upstream references (do not duplicate as truth):
 7. **Space** — spacing scale, radius, stroke, stamp shadow
 8. **Logo** — mark / mark+wordmark / wordmark lockups, clearspace (½ W), min sizes, don’ts
 9. **Characters** — gallery plus usage matrix (who, when, min size)
-10. **Icons / doodles** — 2–2.5px ink stroke samples (not an icon font)
-11. **Motion** — orbits 18–24s linear, stamp hover lift, reduced-motion
-12. **Components** — Button, Card, Stamp, Nav chip, Focus, Links, Issue 00 tray, Field + Say hi
-13. **Code** — inline, fenced TS, YAML/JSON config, terminal, filename tabs, short vs noisy
-14. **Quotes** — body quote (ink rule) and callout (mint stamp bar, Fraunces)
-15. **Blog example** — composed specimen post using quotes + snippets (not a live Issue)
-16. **Voice** — tone notes from existing copy
-17. **Adoption** — how to use `tokens.css` on a future site
+10. **Labels** — Human Made stamp + HUMAN sticker for human-authored work
+11. **Icons / doodles** — 2–2.5px ink stroke samples (not an icon font)
+12. **Motion** — orbits 18–24s linear, stamp hover lift, reduced-motion
+13. **Components** — Button, Card, Stamp, Nav chip, Focus, Links, Issue 00 tray, Field + Say hi
+14. **Code** — inline, fenced TS, YAML/JSON config, terminal, filename tabs, short vs noisy
+15. **Quotes** — body quote (ink rule) and callout (mint stamp bar, Fraunces)
+16. **Blog example** — composed specimen post using quotes + snippets (not a live Issue)
+17. **Voice** — tone notes from existing copy
+18. **Adoption** — how to use `tokens.css` on a future site
 
 ## Characters (expected filenames)
 
@@ -89,6 +90,17 @@ If a PNG is missing, the page shows a dashed “Asset pending” placeholder for
 4. Rebuild components from the recipes on this page
 5. Keep copy as written — the system is visual
 6. Build mobile-first — 44px taps, no document sideways scroll, usable at 320
+
+## Labels (authorship)
+
+Locked marks under `assets/labels/`:
+
+| Mark | Files | Role |
+|---|---|---|
+| **Human Made stamp** | `human-made-stamp.png`, `.svg` | Circular claim: Human Made · Set by hand |
+| **HUMAN sticker** | `human-sticker.png`, `.svg` | One-word poster-lineage badge |
+
+Also in the folder (not locked on the site): `human-poster.*`, `handset-stamp.svg`, `human-made-badge.svg`.
 
 ## Out of scope
 
