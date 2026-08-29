@@ -26,7 +26,7 @@ Open `index.html` in a browser. No build step.
 | Path | Role |
 |---|---|
 | `index.html` | Design system one-pager (sticky side nav / mobile top nav) |
-| `tokens.css` | Evolved brand tokens — color, type, space, radius, stroke |
+| `tokens.css` | Evolved brand tokens — color, type, space, radius, stroke, layout |
 | `ds.css` | Documentation chrome + live component recipes |
 | `assets/characters/` | Character PNG/SVG assets |
 | `README.md` | This note |
@@ -46,18 +46,19 @@ Upstream references (do not duplicate as truth):
 5. **Theming** — light / night-paper tokens, toggle + `localStorage`, dark rules
 6. **Typography** — three families + scale
 7. **Space** — spacing scale, radius, stroke, stamp shadow
-8. **Logo** — mark / mark+wordmark / wordmark lockups, clearspace (½ W), min sizes, don’ts
-9. **Characters** — gallery plus usage matrix (who, when, min size)
-10. **Labels** — Human Made stamp + HUMAN sticker for human-authored work
-11. **Shapes** — mid-century SVG sheet (`shapes.html` + `assets/shapes/`)
-12. **Icons / doodles** — 2–2.5px ink stroke samples (not an icon font)
-13. **Motion** — orbits 18–24s linear, stamp hover lift, reduced-motion
-14. **Components** — Button, Card, Stamp, Nav chip, Focus, Links, Issue 00 tray, Field + Say hi
-15. **Code** — inline, fenced TS, YAML/JSON config, terminal, filename tabs, short vs noisy
-16. **Quotes** — body quote (ink rule) and callout (mint stamp bar, Fraunces)
-17. **Blog example** — composed specimen post using quotes + snippets (not a live Issue)
-18. **Voice** — tone notes from existing copy
-19. **Adoption** — how to use `tokens.css` on a future site
+8. **Layout** — marketing-page recipes: widths, section rhythm, header, footer, hero, project card
+9. **Logo** — mark / mark+wordmark / wordmark lockups, clearspace (½ W), min sizes, don’ts
+10. **Characters** — gallery plus usage matrix (who, when, min size)
+11. **Labels** — Human Made stamp + HUMAN sticker for human-authored work
+12. **Shapes** — mid-century SVG sheet (`shapes.html` + `assets/shapes/`)
+13. **Icons / doodles** — 2–2.5px ink stroke samples (not an icon font)
+14. **Motion** — orbits 18–24s linear, stamp hover lift, reduced-motion
+15. **Components** — Button, Card, Stamp, Nav chip, Focus, Links, Issue 00 tray, Field + Say hi
+16. **Code** — inline, fenced TS, YAML/JSON config, terminal, filename tabs, short vs noisy
+17. **Quotes** — body quote (ink rule) and callout (mint stamp bar, Fraunces)
+18. **Blog example** — composed specimen post using quotes + snippets (not a live Issue)
+19. **Voice** — tone notes from existing copy
+20. **Adoption** — how to use `tokens.css` on a future site
 
 ## Characters (expected filenames)
 
@@ -111,4 +112,4 @@ Also in the folder (not locked on the site): `human-poster.*`, `handset-stamp.sv
 
 ## Out of scope
 
-This folder is **not** the marketing homepage rebuild. A small example strip in Components is enough. Rebuild the public site against these tokens later.
+This folder is **not** the marketing homepage rebuild. Layout recipes (header, footer, hero, project card) are live specimens — steal them. Do not treat this page as the live site.

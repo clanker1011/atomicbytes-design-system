@@ -2103,6 +2103,347 @@ footer.ds-foot {
 }
 .shapes-shell .side-nav .n { letter-spacing: 0; }
 
+
+/* ---------- Layout recipes (marketing specimens) ---------- */
+/* Prefix: .mkt-*, .width-demo, .rhythm-*, .project-*, .specimen-frame
+   Live inside .content. DS chrome (side-nav / top-nav) is not these. */
+
+.layout-sub {
+  font-size: var(--fs-xl);
+  margin-top: var(--space-32);
+  margin-bottom: var(--space-8);
+}
+
+.specimen-frame {
+  margin-top: var(--space-16);
+  background: var(--paper-shade);
+  border: var(--stroke) solid var(--ink);
+  border-radius: var(--radius-lg);
+  padding: var(--space-16);
+  min-width: 0;
+}
+
+/* Widths — stacked columns; meter shows measure even at 320 */
+.width-demo {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-12);
+  margin-top: var(--space-16);
+  background: var(--paper-shade);
+  border: var(--stroke) solid var(--ink);
+  border-radius: var(--radius-lg);
+  padding: var(--space-16);
+  min-width: 0;
+}
+.width-col {
+  --span: 72;
+  background: var(--surface);
+  border: var(--stroke) solid var(--ink);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-stamp);
+  padding: var(--space-16);
+  min-width: 0;
+  width: 100%;
+}
+.width-col.is-narrow { --span: 38; max-width: min(100%, var(--content-narrow)); }
+.width-col.is-default { --span: 56; max-width: min(100%, var(--content)); }
+.width-col.is-wide { --span: 72; max-width: min(100%, var(--content-wide)); }
+.width-meter {
+  height: 10px;
+  width: calc(100% * var(--span) / 72);
+  max-width: 100%;
+  background: var(--coral);
+  border: 1.5px solid var(--ink);
+  border-radius: 3px;
+  margin-bottom: var(--space-8);
+}
+.width-label {
+  display: block;
+  font-size: var(--fs-xs);
+  font-weight: 800;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+.width-token {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--cobalt);
+  margin: 2px 0 var(--space-8);
+  overflow-wrap: anywhere;
+}
+.width-col p {
+  font-size: var(--fs-sm);
+  max-width: 46ch;
+}
+
+/* Section rhythm — live padding, not a diagram */
+.rhythm-stack {
+  margin-top: var(--space-16);
+  border: var(--stroke) solid var(--ink);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: var(--shadow-stamp);
+  min-width: 0;
+}
+.rhythm-band {
+  padding-inline: var(--space-16);
+  border-bottom: var(--stroke-thin) dashed var(--ink);
+}
+.rhythm-band:last-child { border-bottom: none; }
+.rhythm-band.is-sm {
+  padding-block: var(--section-y-sm);
+  background: var(--surface);
+}
+.rhythm-band.is-md {
+  padding-block: var(--section-y-md);
+  background: var(--paper-shade);
+}
+.rhythm-band.is-lg {
+  padding-block: var(--section-y-lg);
+  background: var(--surface);
+}
+.rhythm-label {
+  display: block;
+  font-size: var(--fs-xs);
+  font-weight: 800;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  margin-bottom: var(--space-8);
+}
+.rhythm-band p {
+  font-size: var(--fs-sm);
+  max-width: 46ch;
+}
+
+/* Marketing header — stacks on a pocket */
+.mkt-header {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-12);
+  min-height: var(--header-h);
+  background: var(--surface);
+  border: var(--stroke) solid var(--ink);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-stamp);
+  padding: var(--space-12) var(--space-16);
+}
+.mkt-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  text-decoration: none;
+  min-width: 0;
+}
+.mkt-brand img {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  background: var(--mascot-field);
+  border-radius: 6px;
+}
+.mkt-word {
+  font-family: var(--font-brand);
+  font-size: clamp(0.48rem, 2.4vw, 0.62rem);
+  letter-spacing: var(--tracking-brand);
+  line-height: 1.2;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+.mkt-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4) var(--space-8);
+}
+.mkt-nav a {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  text-decoration: none;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--cobalt);
+  min-height: var(--tap, 44px);
+  padding: 8px 6px;
+}
+.mkt-nav a:hover,
+.mkt-nav a:focus-visible { text-decoration: underline; }
+.mkt-header .mkt-cta { width: 100%; }
+
+/* Marketing footer */
+.mkt-footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  background: var(--surface);
+  border: var(--stroke) solid var(--ink);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-stamp);
+  padding: var(--space-24);
+  padding-right: calc(var(--space-24) + 44px);
+  min-width: 0;
+}
+.mkt-foot-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-8);
+}
+.mkt-foot-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4) var(--space-16);
+}
+.mkt-foot-links a {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  text-decoration: underline;
+  text-decoration-color: var(--cobalt);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  min-height: var(--tap, 44px);
+}
+.mkt-foot-links a:hover,
+.mkt-foot-links a:focus-visible { text-decoration-thickness: 3px; }
+.mkt-foot-shape {
+  position: absolute;
+  right: var(--space-16);
+  bottom: var(--space-16);
+  width: 40px;
+  height: auto;
+  pointer-events: none;
+}
+
+/* Marketing hero — not the DS intro-hero collage */
+.mkt-hero {
+  position: relative;
+  background: var(--surface);
+  border: var(--stroke-thick) solid var(--ink);
+  border-radius: var(--radius-chunky);
+  box-shadow: var(--shadow-stamp);
+  padding: var(--space-24);
+  overflow: hidden;
+  min-width: 0;
+}
+.mkt-hero-kicker {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--cobalt);
+  margin-bottom: var(--space-12);
+  padding-right: 56px;
+}
+.mkt-hero-title {
+  font-size: clamp(1.85rem, 4.5vw, 2.75rem);
+  max-width: 12ch;
+  margin-bottom: var(--space-16);
+}
+.mkt-hero-title em {
+  font-style: italic;
+  font-weight: 500;
+  font-variation-settings: "SOFT" 80, "WONK" 1;
+}
+.mkt-hero-lede {
+  font-size: var(--fs-lg);
+  line-height: var(--lh-loose);
+  max-width: min(36ch, var(--content-narrow));
+  margin-bottom: var(--space-24);
+}
+.mkt-hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-12);
+}
+.mkt-hero-shape {
+  position: absolute;
+  top: var(--space-16);
+  right: var(--space-16);
+  width: 48px;
+  height: auto;
+  pointer-events: none;
+}
+.mkt-hero-peek {
+  display: none;
+}
+
+/* Project / case-study cards */
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-16);
+  margin-top: var(--space-16);
+  list-style: none;
+}
+.project-card {
+  background: var(--surface);
+  border: var(--stroke-thick) solid var(--ink);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-stamp);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-stamp-hover);
+}
+.project-thumb {
+  background: var(--paper-shade);
+  border-bottom: var(--stroke) solid var(--ink);
+  aspect-ratio: 16 / 9;
+  display: grid;
+  place-items: center;
+  padding: var(--space-16);
+}
+.project-thumb img {
+  width: 64px;
+  height: auto;
+}
+.project-body {
+  padding: var(--space-16) var(--space-16) var(--space-24);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  flex: 1;
+}
+.project-body h4 {
+  font-size: var(--fs-xl);
+  margin: var(--space-4) 0 0;
+}
+.project-body p {
+  font-size: var(--fs-sm);
+}
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  list-style: none;
+  margin-top: var(--space-8);
+}
+.project-tags li {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  background: var(--yolk);
+  color: var(--on-accent);
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius-pill);
+  padding: 4px 10px;
+}
+
 /* ---------- Mobile-first breakpoints ---------- */
 /* Default styles above are the 320px floor.
    480  — slightly roomier phone / small doodle grids
@@ -2132,6 +2473,10 @@ footer.ds-foot {
     padding-right: var(--space-24);
   }
   .example-mark { width: 120px; }
+  .specimen-frame,
+  .width-demo { padding: var(--space-24); }
+  .mkt-hero { padding: var(--space-32); }
+  .rhythm-band { padding-inline: var(--space-24); }
 }
 
 @media (min-width: 768px) {
@@ -2160,6 +2505,35 @@ footer.ds-foot {
   .type-card { padding: var(--space-24) var(--space-32); }
   .playground { padding: var(--space-32); }
   .example-strip { padding: var(--space-32); }
+  .project-grid { grid-template-columns: 1fr 1fr; }
+  .mkt-header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .mkt-nav { margin-left: auto; }
+  .mkt-header .mkt-cta { width: auto; }
+  .mkt-footer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  .mkt-hero-peek {
+    display: block;
+    position: absolute;
+    right: var(--space-24);
+    bottom: -10px;
+    width: 72px;
+    height: auto;
+    background: var(--mascot-field);
+    border: var(--stroke-thin) solid var(--ink);
+    border-radius: 10px;
+    box-shadow: 2px 2px 0 var(--ink);
+  }
+  .mkt-hero { padding-right: 120px; }
+  .mkt-hero-kicker { padding-right: 0; }
+  .mkt-hero-shape { width: 64px; }
 }
 
 @media (min-width: 900px) {
@@ -2188,6 +2562,8 @@ footer.ds-foot {
   }
   .nav-chip { min-height: 0; padding: 4px 2px; }
   .nav-chip-pill { min-height: 0; padding: 6px 12px; }
+  .mkt-nav a { min-height: 0; padding: 4px 6px; }
+  .mkt-foot-links a { min-height: 0; }
 }
 
 @media (min-width: 1024px) {
@@ -2203,4 +2579,5 @@ footer.ds-foot {
   .orbit-demo .ring-2,
   .orbit-demo .ring-3 { animation: none; }
   .lift-card-demo, .lift-card-demo:hover { transition: none; transform: none; }
+  .project-card, .project-card:hover { transition: none; transform: none; }
 }

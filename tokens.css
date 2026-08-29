@@ -121,12 +121,26 @@
   --shadow-stamp-hover: 4px 4px 0 var(--ink);
   --shadow-stamp-press: 1px 1px 0 var(--ink);
 
-  /* ---------- Layout (DS site helpers) ---------- */
+  /* ---------- Layout ---------- */
+  /* DS chrome helpers — this documentation site, not the marketing page. */
   --wrap: min(1080px, calc(100% - 48px));
   --nav-width: 220px;
   --ds-max: 1440px;
   --tap: 44px;              /* min touch target */
   --nav-sticky-h: 6.5rem;   /* mobile stacked header; desk uses side-nav */
+
+  /* Marketing measures — steal these for atomicbytes.com. */
+  --content-narrow: 38rem;  /* ~36–40rem; readable body / lede measure */
+  --content: 56rem;         /* default marketing column */
+  --content-wide: 72rem;    /* heroes, project grids — not every band */
+
+  /* Vertical section padding — mobile-first, grows with the viewport. */
+  --section-y-sm: clamp(2rem, 5vw, 3rem);     /* tight bands, footers */
+  --section-y-md: clamp(3rem, 8vw, 5rem);     /* default marketing section */
+  --section-y-lg: clamp(4.5rem, 12vw, 8rem);  /* heroes, opening breath */
+
+  /* Marketing sticky header (not the DS side-nav). */
+  --header-h: 4.5rem;
 
   /* ---------- Motion ---------- */
   /* Orbits stay slow and linear. Stamp hover is a 1–2px lift, not a bounce. */
