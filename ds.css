@@ -727,7 +727,7 @@ code {
   background: repeating-linear-gradient(-45deg, var(--mint) 0 8px, var(--ink) 8px 10px, var(--mint) 10px 18px);
   border-bottom: var(--stroke) solid var(--ink);
   margin: calc(var(--space-24) * -1) calc(var(--space-24) * -1) var(--space-16);
-  border-radius: 22px 28px 0 0;
+  border-radius: 18px 20px 0 0;
 }
 .sticker {
   position: absolute;
