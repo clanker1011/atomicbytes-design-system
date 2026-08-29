@@ -1,5 +1,9 @@
 # AtomicBytes Design System
 
+## Live site
+
+Browse the design system: https://clanker1011.github.io/atomicbytes-design-system/
+
 > **This design-system site is the source of truth before the marketing rebuild.**
 > Steal tokens and component recipes from here. Do not treat the homepage mockup at
 > `../index.html` as the system — it is a collage experiment that *uses* the system.
