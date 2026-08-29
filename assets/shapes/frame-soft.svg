@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="t d">
+  <title id="t">Soft frame</title>
+  <desc id="d">Rounded rectangular frame with corner sparks.</desc>
+  <rect x="10" y="12" width="44" height="40" rx="10" ry="10"
+        fill="none" stroke="#FF5B3C" stroke-width="4"/>
+  <g fill="#1C1915">
+    <path d="M18 18 L19 21.2 L22.5 22 L19 22.8 L18 26 L17 22.8 L13.5 22 L17 21.2 Z"/>
+    <path d="M46 42 L47 44.5 L50 45.2 L47 46 L46 48.5 L45 46 L42 45.2 L45 44.5 Z"/>
+  </g>
+</svg>

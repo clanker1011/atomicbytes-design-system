@@ -2047,6 +2047,62 @@ footer.ds-foot {
 }
 .label-body p { font-size: var(--fs-sm); }
 
+
+/* ---------- Shape sheet ---------- */
+.shapes-h1 {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  margin-bottom: var(--space-16);
+}
+.shape-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-12);
+  margin-top: var(--space-24);
+  list-style: none;
+}
+.shape-card {
+  background: var(--surface);
+  border: var(--stroke) solid var(--ink);
+  border-radius: var(--radius-md);
+  box-shadow: 2px 2px 0 var(--ink);
+  overflow: hidden;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.shape-art {
+  background: var(--print-paper, #F6F1E8);
+  border-bottom: var(--stroke-thin) solid var(--ink);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  padding: var(--space-16);
+}
+.shape-art img {
+  width: min(96px, 70%);
+  height: auto;
+  max-height: 96px;
+  object-fit: contain;
+}
+.shape-meta {
+  padding: var(--space-12);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.shape-meta strong {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+}
+.shape-meta .file {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}
+.shapes-shell .side-nav .n { letter-spacing: 0; }
+
 /* ---------- Mobile-first breakpoints ---------- */
 /* Default styles above are the 320px floor.
    480  — slightly roomier phone / small doodle grids
@@ -2055,6 +2111,7 @@ footer.ds-foot {
    1024 — desk lockups / four-up min-sizes */
 
 @media (min-width: 480px) {
+  .shape-grid { grid-template-columns: repeat(3, 1fr); }
   .bp-grid { grid-template-columns: 1fr 1fr; }
   .content { padding: var(--space-32) var(--space-24) var(--space-64); }
   .intro-hero { padding: var(--space-32); }
@@ -2078,6 +2135,8 @@ footer.ds-foot {
 }
 
 @media (min-width: 768px) {
+  .shape-grid { grid-template-columns: repeat(4, 1fr); }
+  .shape-grid-teaser { grid-template-columns: repeat(3, 1fr); }
   .principle { transform: rotate(var(--tilt, 0deg)); }
   .principle-grid,
   .rules,

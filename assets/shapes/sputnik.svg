@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="t d">
+  <title id="t">Sputnik</title>
+  <desc id="d">Radial spokes with sticker electrons.</desc>
+  <g stroke="#1C1915" stroke-width="2.2" stroke-linecap="round">
+    <line x1="32" y1="8" x2="32" y2="56"/>
+    <line x1="8" y1="32" x2="56" y2="32"/>
+    <line x1="14" y1="14" x2="50" y2="50"/>
+    <line x1="50" y1="14" x2="14" y2="50"/>
+  </g>
+  <circle cx="32" cy="32" r="6" fill="#4B6BFF" stroke="#1C1915" stroke-width="2"/>
+  <circle cx="32" cy="8" r="3" fill="#FFD84A" stroke="#1C1915" stroke-width="1.5"/>
+  <circle cx="56" cy="32" r="3" fill="#FF5B3C" stroke="#1C1915" stroke-width="1.5"/>
+  <circle cx="32" cy="56" r="3" fill="#2EE6A6" stroke="#1C1915" stroke-width="1.5"/>
+  <circle cx="8" cy="32" r="3" fill="#FFD84A" stroke="#1C1915" stroke-width="1.5"/>
+</svg>

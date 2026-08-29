@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 96" role="img" aria-labelledby="t d">
+  <title id="t">Trapezoid panel</title>
+  <desc id="d">Tall tapered panel with sparks — atomic-age signage.</desc>
+  <path d="M10 8 L38 14 L34 88 L14 82 Z"
+        fill="#FFD84A" stroke="#1C1915" stroke-width="2.5" stroke-linejoin="round"/>
+  <g fill="#1C1915">
+    <path d="M24 28 L25.4 33.2 L31 34.2 L25.4 35.6 L24 40.8 L22.6 35.6 L17 34.2 L22.6 33.2 Z"/>
+    <path d="M24 58 L25.2 62 L29.5 63 L25.2 64.2 L24 68.2 L22.8 64.2 L18.5 63 L22.8 62 Z"/>
+  </g>
+</svg>

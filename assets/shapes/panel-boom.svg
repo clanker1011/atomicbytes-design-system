@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 48" role="img" aria-labelledby="t d">
+  <title id="t">Boomerang panel</title>
+  <desc id="d">Wide tapered panel with a spark.</desc>
+  <path d="M8 10 L78 6 L88 38 L18 42 Z"
+        fill="#2EE6A6" stroke="#1C1915" stroke-width="2.5" stroke-linejoin="round"/>
+  <g fill="#1C1915">
+    <path d="M40 16 L41.5 20.5 L46 21.5 L41.5 23 L40 27.5 L38.5 23 L34 21.5 L38.5 20.5 Z"/>
+  </g>
+</svg>

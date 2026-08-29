@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="t d">
+  <title id="t">Nodes</title>
+  <desc id="d">Connected node constellation.</desc>
+  <g stroke="#1C1915" stroke-width="2" stroke-linecap="round">
+    <line x1="18" y1="20" x2="32" y2="32"/>
+    <line x1="46" y1="18" x2="32" y2="32"/>
+    <line x1="20" y1="46" x2="32" y2="32"/>
+    <line x1="48" y1="44" x2="32" y2="32"/>
+    <line x1="18" y1="20" x2="46" y2="18"/>
+  </g>
+  <circle cx="32" cy="32" r="5" fill="#FFD84A" stroke="#1C1915" stroke-width="2"/>
+  <circle cx="18" cy="20" r="4" fill="#FF5B3C" stroke="#1C1915" stroke-width="1.75"/>
+  <circle cx="46" cy="18" r="4" fill="#2EE6A6" stroke="#1C1915" stroke-width="1.75"/>
+  <circle cx="20" cy="46" r="4" fill="#4B6BFF" stroke="#1C1915" stroke-width="1.75"/>
+  <circle cx="48" cy="44" r="4" fill="#FF5B3C" stroke="#1C1915" stroke-width="1.75"/>
+</svg>

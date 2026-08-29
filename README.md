@@ -49,14 +49,15 @@ Upstream references (do not duplicate as truth):
 8. **Logo** — mark / mark+wordmark / wordmark lockups, clearspace (½ W), min sizes, don’ts
 9. **Characters** — gallery plus usage matrix (who, when, min size)
 10. **Labels** — Human Made stamp + HUMAN sticker for human-authored work
-11. **Icons / doodles** — 2–2.5px ink stroke samples (not an icon font)
-12. **Motion** — orbits 18–24s linear, stamp hover lift, reduced-motion
-13. **Components** — Button, Card, Stamp, Nav chip, Focus, Links, Issue 00 tray, Field + Say hi
-14. **Code** — inline, fenced TS, YAML/JSON config, terminal, filename tabs, short vs noisy
-15. **Quotes** — body quote (ink rule) and callout (mint stamp bar, Fraunces)
-16. **Blog example** — composed specimen post using quotes + snippets (not a live Issue)
-17. **Voice** — tone notes from existing copy
-18. **Adoption** — how to use `tokens.css` on a future site
+11. **Shapes** — mid-century SVG sheet (`shapes.html` + `assets/shapes/`)
+12. **Icons / doodles** — 2–2.5px ink stroke samples (not an icon font)
+13. **Motion** — orbits 18–24s linear, stamp hover lift, reduced-motion
+14. **Components** — Button, Card, Stamp, Nav chip, Focus, Links, Issue 00 tray, Field + Say hi
+15. **Code** — inline, fenced TS, YAML/JSON config, terminal, filename tabs, short vs noisy
+16. **Quotes** — body quote (ink rule) and callout (mint stamp bar, Fraunces)
+17. **Blog example** — composed specimen post using quotes + snippets (not a live Issue)
+18. **Voice** — tone notes from existing copy
+19. **Adoption** — how to use `tokens.css` on a future site
 
 ## Characters (expected filenames)
 
@@ -90,6 +91,12 @@ If a PNG is missing, the page shows a dashed “Asset pending” placeholder for
 4. Rebuild components from the recipes on this page
 5. Keep copy as written — the system is visual
 6. Build mobile-first — 44px taps, no document sideways scroll, usable at 320
+
+## Shapes
+
+- Gallery page: [`shapes.html`](shapes.html)
+- SVGs: `assets/shapes/` (20 original mid-century marks)
+- Inspiration only: `assets/inspiration/mid-century/` (Matt’s era refs — do not ship)
 
 ## Labels (authorship)
 

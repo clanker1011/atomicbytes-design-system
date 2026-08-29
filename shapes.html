@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F6F1E8">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="AtomicBytes mid-century shape sheet — original SVGs for sparks, orbits, boomerangs, and panels.">
+  <title>AtomicBytes · Shapes</title>
+  <script>
+    (function () {
+      var KEY = "ab-theme";
+      var stored = null;
+      try { stored = localStorage.getItem(KEY); } catch (e) {}
+      var theme;
+      if (stored === "light" || stored === "dark") {
+        theme = stored;
+      } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        theme = "dark";
+      } else {
+        theme = "light";
+      }
+      document.documentElement.setAttribute("data-theme", theme);
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute("content", theme === "dark" ? "#241F18" : "#F6F1E8");
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="ds.css">
+</head>
+<body id="top">
+  <div class="grain" aria-hidden="true"></div>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="top-nav" aria-label="Shapes page">
+    <div class="top-nav-inner">
+      <div class="top-nav-brand">
+        <a class="logo-type" href="index.html">AtomicBytes DS</a>
+        <div class="theme-toggle" role="group" aria-label="Color theme">
+          <button type="button" data-theme-set="light" aria-pressed="true">Light</button>
+          <button type="button" data-theme-set="dark" aria-pressed="false">Dark</button>
+        </div>
+      </div>
+      <ol class="top-nav-links">
+        <li><a href="index.html">Design system</a></li>
+        <li><a href="index.html#labels">Labels</a></li>
+        <li><a href="shapes.html" aria-current="true">Shapes</a></li>
+        <li><a href="index.html#icons">Icons</a></li>
+      </ol>
+    </div>
+  </header>
+
+  <div class="shell shapes-shell">
+    <nav class="side-nav" aria-label="Design system">
+      <a class="nav-brand" href="index.html">
+        <span class="logo-type">AtomicBytes</span>
+        <span class="nav-sub">Shapes</span>
+      </a>
+      <div class="theme-toggle" role="group" aria-label="Color theme">
+        <button type="button" data-theme-set="light" aria-pressed="true">Light</button>
+        <button type="button" data-theme-set="dark" aria-pressed="false">Dark</button>
+      </div>
+      <ol>
+        <li><a href="index.html"><span class="n">←</span> Design system</a></li>
+        <li><a href="shapes.html" aria-current="true"><span class="n">◆</span> Shape sheet</a></li>
+        <li><a href="#sparks"><span class="n">01</span> Sparks</a></li>
+        <li><a href="#atomic"><span class="n">02</span> Atomic</a></li>
+        <li><a href="#organic"><span class="n">03</span> Organic</a></li>
+        <li><a href="#geo"><span class="n">04</span> Geometry</a></li>
+        <li><a href="#panels"><span class="n">05</span> Panels</a></li>
+      </ol>
+      <p class="nav-foot">
+        <strong>Original drawings</strong><br>
+        Inspired by 1950s MCM ornament. Not traced from stock.
+      </p>
+    </nav>
+
+    <div class="content">
+      <main id="main">
+        <section class="ds-section" aria-labelledby="shapes-title">
+          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> Shape sheet</p>
+          <h1 id="shapes-title" class="shapes-h1">Mid-century shapes</h1>
+          <p class="lede">A working sheet of AtomicBytes SVGs — starbursts, orbits, boomerangs, blobs, and panels — for decoration, empty states, and print moments. Brand colors only. Steal the files from <code>assets/shapes/</code>.</p>
+
+          <div class="rules" style="margin-top: var(--space-24)">
+            <div class="rule-card do">
+              <h3><span class="badge do">Do</span> Use them as stickers</h3>
+              <ul>
+                <li>Ink outline stays; fills are coral / mint / cobalt / yolk</li>
+                <li>Scale freely — they’re vectors</li>
+                <li>One or two accents per composition</li>
+                <li>Keep inspiration refs in <code>assets/inspiration/</code> off the live marketing site</li>
+              </ul>
+            </div>
+            <div class="rule-card dont">
+              <h3><span class="badge dont">Don’t</span> Stock habits</h3>
+              <ul>
+                <li>Trace or paste commercial clip-art sheets</li>
+                <li>Neon glows, gradients, or drop shadows</li>
+                <li>Mint/yolk as stroke color</li>
+                <li>Crowd a layout with every spark at once</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="sparks" class="ds-section" aria-labelledby="sparks-title">
+          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 01</p>
+          <h2 id="sparks-title">Sparks</h2>
+          <ul class="shape-grid">
+            <li class="shape-card" data-kind="spark">
+              <div class="shape-art">
+                <img src="assets/shapes/asterisk.svg" alt="Asterisk" loading="lazy">
+              </div>
+              <div class="shape-meta">
+                <strong>Asterisk</strong>
+                <span class="file">asterisk.svg</span>
+              </div>
+            </li>
+            <li class="shape-card" data-kind="spark">
+              <div class="shape-art">
+                <img src="assets/shapes/spark-twin.svg" alt="Twin sparks" loading="lazy">
+              </div>
+              <div class="shape-meta">
+                <strong>Twin sparks</strong>
+                <span class="file">spark-twin.svg</span>
+              </div>
+            </li>
+            <li class="shape-card" data-kind="spark">
+              <div class="shape-art">
+                <img src="assets/shapes/starburst-4.svg" alt="Starburst 4" loading="lazy">
+              </div>
+              <div class="shape-meta">
+                <strong>Starburst 4</strong>
+                <span class="file">starburst-4.svg</span>
+              </div>
+            </li>
+            <li class="shape-card" data-kind="spark">
+              <div class="shape-art">
+                <img src="assets/shapes/starburst-8.svg" alt="Starburst 8" loading="lazy">
+              </div>
+              <div class="shape-meta">
+                <strong>Starburst 8</strong>
+                <span class="file">starburst-8.svg</span>
+              </div>
+            </li>
+            <li class="shape-card" data-kind="spark">
+              <div class="shape-art">
+                <img src="assets/shapes/starburst-outline.svg" alt="Starburst outline" loading="lazy">
+              </div>
+              <div class="shape-meta">
+                <strong>Starburst outline</strong>
+                <span class="file">starburst-outline.svg</span>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section id="atomic" class="ds-section" aria-labelledby="atomic-title">
+          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 02</p>
+          <h2 id="atomic-title">Atomic</h2>
+          <ul class="shape-grid">
+            <li class="shape-card" data-kind="atomic">
+              <div class="shape-art">
+                <img src="assets/shapes/atom-orbit.svg" alt="Atom orbit" loading="lazy">
+              </div>
+              <div class="shape-meta">
+                <strong>Atom orbit</strong>
+                <span class="file">atom-orbit.svg</span>
+              </div>
+            </li>
+            <li class="shape-card" data-kind="atomic">
+              <div class="shape-art">
+                <img src="assets/shapes/nodes.svg" alt="Nodes" loading="lazy">
+              </div>
+              <div class="shape-meta">
+                <strong>Nodes</strong>
+                <span class="file">nodes.svg</span>
+              </div>
+            </li>
+            <li class="shape-card" data-kind="atomic">
+              <div class="shape-art">
+                <img src="assets/shapes/sputnik.svg" alt="Sputnik" loading="lazy">
+              </div>
+              <div class="shape-meta">
+                <strong>Sputnik</strong>
+                <span class="file">sputnik.svg</span>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section id="organic" class="ds-section" aria-labelledby="organic-title">
+          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 03</p>
+          <h2 id="organic-title">Organic</h2>
+          <ul class="shape-grid">
+            <li class="shape-card" data-kind="organic">
+              <div class="shape-art">
+                <img src="assets/shapes/boomerang.svg" alt="Boomerang" loading="lazy">
+              </div>
+              <div class="shape-meta">
+                <strong>Boomerang</strong>
+                <span class="file">boomerang.svg</span>
+              </div>
+            </li>
+            <li class="shape-card" data-kind="organic">
+              <div class="shape-art">
+                <img src="assets/shapes/caption-blob.svg" alt="Caption blob" loading="lazy">
+              </div>
+              <div class="shape-meta">
+                <strong>Caption blob</strong>
+                <span class="file">caption-blob.svg</span>
+              </div>
+            </li>
+            <li class="shape-card" data-kind="organic">
+              <div class="shape-art">
+                <img src="assets/shapes/crescent.svg" alt="Crescent" loading="lazy">
+              </div>
+              <div class="shape-meta">
+                <strong>Crescent</strong>
+                <span class="file">crescent.svg</span>
+              </div>
+            </li>
+            <li class="shape-card" data-kind="organic">
+              <div class="shape-art">
+                <img src="assets/shapes/kidney.svg" alt="Kidney blob" loading="lazy">
+              </div>
+              <div class="shape-meta">
+                <strong>Kidney blob</strong>
+                <span class="file">kidney.svg</span>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section id="geo" class="ds-section" aria-labelledby="geo-title">
+          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 04</p>
+          <h2 id="geo-title">Geometry</h2>
+          <ul class="shape-grid">
+            <li class="shape-card" data-kind="geo">
+              <div class="shape-art">
+                <img src="assets/shapes/arrow-burst.svg" alt="Arrow burst" loading="lazy">
+              </div>
+              <div class="shape-meta">
+                <strong>Arrow burst</strong>
+                <span class="file">arrow-burst.svg</span>
+              </div>
+            </li>
+            <li class="shape-card" data-kind="geo">
+              <div class="shape-art">
+                <img src="assets/shapes/capsule.svg" alt="Capsule" loading="lazy">
+              </div>
+              <div class="shape-meta">
+                <strong>Capsule</strong>
+                <span class="file">capsule.svg</span>
+              </div>
+            </li>
+            <li class="shape-card" data-kind="geo">
+              <div class="shape-art">
+                <img src="assets/shapes/diamonds-pair.svg" alt="Diamond pair" loading="lazy">
+              </div>
+              <div class="shape-meta">
+                <strong>Diamond pair</strong>
+                <span class="file">diamonds-pair.svg</span>
+              </div>
+            </li>
+            <li class="shape-card" data-kind="geo">
+              <div class="shape-art">
+                <img src="assets/shapes/lozenge.svg" alt="Lozenge" loading="lazy">
+              </div>
+              <div class="shape-meta">
+                <strong>Lozenge</strong>
+                <span class="file">lozenge.svg</span>
+              </div>
+            </li>
+            <li class="shape-card" data-kind="geo">
+              <div class="shape-art">
+                <img src="assets/shapes/target-round.svg" alt="Target" loading="lazy">
+              </div>
+              <div class="shape-meta">
+                <strong>Target</strong>
+                <span class="file">target-round.svg</span>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section id="panels" class="ds-section" aria-labelledby="panels-title">
+          <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 05</p>
+          <h2 id="panels-title">Panels</h2>
+          <ul class="shape-grid">
+            <li class="shape-card" data-kind="panel">
+              <div class="shape-art">
+                <img src="assets/shapes/frame-soft.svg" alt="Soft frame" loading="lazy">
+              </div>
+              <div class="shape-meta">
+                <strong>Soft frame</strong>
+                <span class="file">frame-soft.svg</span>
+              </div>
+            </li>
+            <li class="shape-card" data-kind="panel">
+              <div class="shape-art">
+                <img src="assets/shapes/panel-boom.svg" alt="Boom panel" loading="lazy">
+              </div>
+              <div class="shape-meta">
+                <strong>Boom panel</strong>
+                <span class="file">panel-boom.svg</span>
+              </div>
+            </li>
+            <li class="shape-card" data-kind="panel">
+              <div class="shape-art">
+                <img src="assets/shapes/panel-trap.svg" alt="Trap panel" loading="lazy">
+              </div>
+              <div class="shape-meta">
+                <strong>Trap panel</strong>
+                <span class="file">panel-trap.svg</span>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <footer class="ds-foot">
+          <p class="rubber">SHAPE SHEET · v0</p>
+          <p class="domain"><a class="text-link" href="index.html">← Back to the design system</a></p>
+        </footer>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var KEY = "ab-theme";
+      function apply(theme) {
+        document.documentElement.setAttribute("data-theme", theme);
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute("content", theme === "dark" ? "#241F18" : "#F6F1E8");
+        document.querySelectorAll("[data-theme-set]").forEach(function (btn) {
+          btn.setAttribute("aria-pressed", btn.getAttribute("data-theme-set") === theme ? "true" : "false");
+        });
+      }
+      var current = document.documentElement.getAttribute("data-theme") || "light";
+      apply(current);
+      document.querySelectorAll("[data-theme-set]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var theme = btn.getAttribute("data-theme-set");
+          apply(theme);
+          try { localStorage.setItem(KEY, theme); } catch (e) {}
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 48" role="img" aria-labelledby="t d">
+  <title id="t">Arrow burst</title>
+  <desc id="d">Bold arrow with spark accents.</desc>
+  <path d="M6 24 H58 L48 12 H66 L90 24 L66 36 H48 L58 24 Z"
+        fill="#FF5B3C" stroke="#1C1915" stroke-width="2.5" stroke-linejoin="round"/>
+  <g fill="#1C1915">
+    <path d="M22 14 L23 17 L26 18 L23 19 L22 22 L21 19 L18 18 L21 17 Z"/>
+    <path d="M34 30 L35 32.5 L38 33.2 L35 34 L34 36.5 L33 34 L30 33.2 L33 32.5 Z"/>
+  </g>
+</svg>

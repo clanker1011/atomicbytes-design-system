@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="t d">
+  <title id="t">Boomerang</title>
+  <desc id="d">Mid-century boomerang / kidney silhouette.</desc>
+  <path d="M10 44
+           C12 20 28 8 48 10
+           C38 18 36 28 40 42
+           C28 36 18 40 10 44 Z"
+        fill="#FF5B3C" stroke="#1C1915" stroke-width="2.5" stroke-linejoin="round"/>
+</svg>

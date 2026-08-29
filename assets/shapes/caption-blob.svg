@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 56" role="img" aria-labelledby="t d">
+  <title id="t">Caption blob</title>
+  <desc id="d">Biomorphic caption / callout shape.</desc>
+  <path d="M12 10
+           C8 10 6 14 6 20
+           L6 32
+           C6 40 12 44 20 44
+           L28 44
+           L22 52
+           L40 44
+           L60 44
+           C70 44 74 38 74 30
+           L74 20
+           C74 12 68 10 60 10 Z"
+        fill="#FFD84A" stroke="#1C1915" stroke-width="2.5" stroke-linejoin="round"/>
+</svg>
