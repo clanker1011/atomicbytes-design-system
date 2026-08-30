@@ -66,13 +66,13 @@ The Characters section expects these files under `assets/characters/`:
 
 | Character | File(s) | Role |
 |---|---|---|
-| **AtomicByte** | `atomicbyte.png`, `atomicbyte-mark.svg` | Primary logo atom / face mark |
+| **AtomicByte** | `atomicbyte.svg`, `atomicbyte.png` | Logo — same asset as Characters |
 | **Atom Salesman** | `atom-salesman.png` | Full-body mascot |
 | **Byte-Bot** | `byte-bot.png` | Robot mascot |
 | **Byte Rocket** | `byte-rocket.png` | Rocket mascot |
 | **AtomicMark** | `atomic-mark.png` | Geometric trademark atom (no face) |
 
-`atomicbyte-mark.svg` is the Bohr face-mark SVG (same art as `../mascots/A.svg`).
+The logo is AtomicByte (`atomicbyte.svg` / `atomicbyte.png`) — not a separate mark file.
 If a PNG is missing, the page shows a dashed “Asset pending” placeholder for that filename.
 
 **Rejected:** Lab Tech — do not include.
