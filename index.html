@@ -40,8 +40,32 @@
       <div class="top-nav-brand">
         <a class="logo-type" href="#intro">AtomicBytes DS</a>
         <div class="theme-toggle" role="group" aria-label="Color theme">
-          <button type="button" data-theme-set="light" aria-pressed="true">Light</button>
-          <button type="button" data-theme-set="dark" aria-pressed="false">Dark</button>
+          <button type="button" data-theme-set="light" aria-pressed="true" aria-label="Light theme">
+            <svg class="theme-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <g fill="none" stroke="currentColor" stroke-width="1.5">
+                <ellipse cx="12" cy="12" rx="8.5" ry="3.6"/>
+                <ellipse cx="12" cy="12" rx="8.5" ry="3.6" transform="rotate(60 12 12)"/>
+                <ellipse cx="12" cy="12" rx="8.5" ry="3.6" transform="rotate(-60 12 12)"/>
+              </g>
+              <circle class="theme-icon-nucleus" cx="12" cy="12" r="2.4" fill="#FFD84A" stroke="currentColor" stroke-width="1.25"/>
+              <circle cx="20.5" cy="12" r="1.1" fill="currentColor"/>
+              <circle cx="7.75" cy="4.65" r="1.1" fill="currentColor"/>
+              <circle cx="7.75" cy="19.35" r="1.1" fill="currentColor"/>
+            </svg>
+          </button>
+          <button type="button" data-theme-set="dark" aria-pressed="false" aria-label="Dark theme">
+            <svg class="theme-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <g fill="none" stroke="currentColor" stroke-width="1.5">
+                <ellipse cx="12" cy="12" rx="8.5" ry="3.6"/>
+                <ellipse cx="12" cy="12" rx="8.5" ry="3.6" transform="rotate(60 12 12)"/>
+                <ellipse cx="12" cy="12" rx="8.5" ry="3.6" transform="rotate(-60 12 12)"/>
+              </g>
+              <circle class="theme-icon-nucleus" cx="12" cy="12" r="2.4" fill="currentColor" stroke="currentColor" stroke-width="1.25"/>
+              <circle cx="20.5" cy="12" r="1.1" fill="currentColor"/>
+              <circle cx="7.75" cy="4.65" r="1.1" fill="currentColor"/>
+              <circle cx="7.75" cy="19.35" r="1.1" fill="currentColor"/>
+            </svg>
+          </button>
         </div>
       </div>
       <ol class="top-nav-links">
@@ -77,8 +101,32 @@
         <span class="nav-sub">Design System</span>
       </a>
       <div class="theme-toggle" role="group" aria-label="Color theme">
-        <button type="button" data-theme-set="light" aria-pressed="true">Light</button>
-        <button type="button" data-theme-set="dark" aria-pressed="false">Dark</button>
+        <button type="button" data-theme-set="light" aria-pressed="true" aria-label="Light theme">
+          <svg class="theme-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <g fill="none" stroke="currentColor" stroke-width="1.5">
+              <ellipse cx="12" cy="12" rx="8.5" ry="3.6"/>
+              <ellipse cx="12" cy="12" rx="8.5" ry="3.6" transform="rotate(60 12 12)"/>
+              <ellipse cx="12" cy="12" rx="8.5" ry="3.6" transform="rotate(-60 12 12)"/>
+            </g>
+            <circle class="theme-icon-nucleus" cx="12" cy="12" r="2.4" fill="#FFD84A" stroke="currentColor" stroke-width="1.25"/>
+            <circle cx="20.5" cy="12" r="1.1" fill="currentColor"/>
+            <circle cx="7.75" cy="4.65" r="1.1" fill="currentColor"/>
+            <circle cx="7.75" cy="19.35" r="1.1" fill="currentColor"/>
+          </svg>
+        </button>
+        <button type="button" data-theme-set="dark" aria-pressed="false" aria-label="Dark theme">
+          <svg class="theme-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <g fill="none" stroke="currentColor" stroke-width="1.5">
+              <ellipse cx="12" cy="12" rx="8.5" ry="3.6"/>
+              <ellipse cx="12" cy="12" rx="8.5" ry="3.6" transform="rotate(60 12 12)"/>
+              <ellipse cx="12" cy="12" rx="8.5" ry="3.6" transform="rotate(-60 12 12)"/>
+            </g>
+            <circle class="theme-icon-nucleus" cx="12" cy="12" r="2.4" fill="currentColor" stroke="currentColor" stroke-width="1.25"/>
+            <circle cx="20.5" cy="12" r="1.1" fill="currentColor"/>
+            <circle cx="7.75" cy="4.65" r="1.1" fill="currentColor"/>
+            <circle cx="7.75" cy="19.35" r="1.1" fill="currentColor"/>
+          </svg>
+        </button>
       </div>
       <ol>
         <li><a href="#intro"><span class="n">01</span> Intro</a></li>
@@ -194,7 +242,7 @@
             <li class="principle">
               <span class="tag">touch</span>
               <h3>Forty-four pixels, no excuses</h3>
-              <p>Theme, nav chips, buttons, and fields get ~44px targets. Fingers are not cursors. If you have to pinch to tap Light/Dark, you failed the brief.</p>
+              <p>Theme, nav chips, buttons, and fields get ~44px targets. Fingers are not cursors. If you have to pinch to tap the Day–Night atom toggle, you failed the brief.</p>
             </li>
           </ul>
 
@@ -575,7 +623,7 @@
           </div>
 
           <h3 style="font-size:var(--fs-xl);margin-top:var(--space-32);margin-bottom:var(--space-8)">Toggle + persist</h3>
-          <p class="muted" style="font-size:var(--fs-sm);max-width:52ch">The Light / Dark control in the sidebar (and mobile header) sets <code>data-theme</code> on <code>&lt;html&gt;</code> and writes <code>localStorage.ab-theme</code>. If nothing is stored, the page follows <code>prefers-color-scheme</code>. Flip it — cards, buttons, quotes, forms, and code slabs should all track.</p>
+          <p class="muted" style="font-size:var(--fs-sm);max-width:52ch">The Day–Night atom icon toggle in the sidebar (and mobile header) sets <code>data-theme</code> on <code>&lt;html&gt;</code> and writes <code>localStorage.ab-theme</code>. If nothing is stored, the page follows <code>prefers-color-scheme</code>. Flip it — cards, buttons, quotes, forms, and code slabs should all track.</p>
           <pre class="code-block" tabindex="0"><span class="c">/* tokens.css — color is the only layer that swaps */</span>
 <span class="k">:root</span> { <span class="c">/* cream paper defaults */</span>
   <span class="fn">--paper</span>: <span class="s">#F6F1E8</span>;
@@ -1346,6 +1394,34 @@
                 <circle cx="24" cy="18" r="2.4"/>
               </svg>
               <span>Rocket</span>
+            </li>
+            <li class="doodle-card">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <g fill="none" stroke="currentColor" stroke-width="1.5">
+                  <ellipse cx="12" cy="12" rx="8.5" ry="3.6"/>
+                  <ellipse cx="12" cy="12" rx="8.5" ry="3.6" transform="rotate(60 12 12)"/>
+                  <ellipse cx="12" cy="12" rx="8.5" ry="3.6" transform="rotate(-60 12 12)"/>
+                </g>
+                <circle cx="12" cy="12" r="2.4" fill="var(--yolk)" stroke="currentColor" stroke-width="1.25"/>
+                <circle cx="20.5" cy="12" r="1.1" fill="currentColor"/>
+                <circle cx="7.75" cy="4.65" r="1.1" fill="currentColor"/>
+                <circle cx="7.75" cy="19.35" r="1.1" fill="currentColor"/>
+              </svg>
+              <span>Day atom</span>
+            </li>
+            <li class="doodle-card">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <g fill="none" stroke="currentColor" stroke-width="1.5">
+                  <ellipse cx="12" cy="12" rx="8.5" ry="3.6"/>
+                  <ellipse cx="12" cy="12" rx="8.5" ry="3.6" transform="rotate(60 12 12)"/>
+                  <ellipse cx="12" cy="12" rx="8.5" ry="3.6" transform="rotate(-60 12 12)"/>
+                </g>
+                <circle cx="12" cy="12" r="2.4" fill="currentColor" stroke="currentColor" stroke-width="1.25"/>
+                <circle cx="20.5" cy="12" r="1.1" fill="currentColor"/>
+                <circle cx="7.75" cy="4.65" r="1.1" fill="currentColor"/>
+                <circle cx="7.75" cy="19.35" r="1.1" fill="currentColor"/>
+              </svg>
+              <span>Night atom</span>
             </li>
           </ul>
         </section>
