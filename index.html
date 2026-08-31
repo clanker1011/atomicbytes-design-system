@@ -40,8 +40,12 @@
       <div class="top-nav-brand">
         <a class="logo-type" href="#intro">AtomicBytes DS</a>
         <div class="theme-toggle" role="group" aria-label="Color theme">
-          <button type="button" data-theme-set="light" aria-pressed="true">Light</button>
-          <button type="button" data-theme-set="dark" aria-pressed="false">Dark</button>
+          <button type="button" data-theme-set="light" aria-pressed="true" aria-label="Light theme">
+            <img class="theme-icon" src="assets/shapes/starburst-8.svg" alt="" width="22" height="22" decoding="async">
+          </button>
+          <button type="button" data-theme-set="dark" aria-pressed="false" aria-label="Dark theme">
+            <img class="theme-icon" src="assets/shapes/crescent.svg" alt="" width="22" height="22" decoding="async">
+          </button>
         </div>
       </div>
       <ol class="top-nav-links">
@@ -77,8 +81,12 @@
         <span class="nav-sub">Design System</span>
       </a>
       <div class="theme-toggle" role="group" aria-label="Color theme">
-        <button type="button" data-theme-set="light" aria-pressed="true">Light</button>
-        <button type="button" data-theme-set="dark" aria-pressed="false">Dark</button>
+        <button type="button" data-theme-set="light" aria-pressed="true" aria-label="Light theme">
+          <img class="theme-icon" src="assets/shapes/starburst-8.svg" alt="" width="22" height="22" decoding="async">
+        </button>
+        <button type="button" data-theme-set="dark" aria-pressed="false" aria-label="Dark theme">
+          <img class="theme-icon" src="assets/shapes/crescent.svg" alt="" width="22" height="22" decoding="async">
+        </button>
       </div>
       <ol>
         <li><a href="#intro"><span class="n">01</span> Intro</a></li>
@@ -194,7 +202,7 @@
             <li class="principle">
               <span class="tag">touch</span>
               <h3>Forty-four pixels, no excuses</h3>
-              <p>Theme, nav chips, buttons, and fields get ~44px targets. Fingers are not cursors. If you have to pinch to tap Light/Dark, you failed the brief.</p>
+              <p>Theme, nav chips, buttons, and fields get ~44px targets. Fingers are not cursors. If you have to pinch to tap the starburst/crescent theme toggle, you failed the brief.</p>
             </li>
           </ul>
 
@@ -575,7 +583,7 @@
           </div>
 
           <h3 style="font-size:var(--fs-xl);margin-top:var(--space-32);margin-bottom:var(--space-8)">Toggle + persist</h3>
-          <p class="muted" style="font-size:var(--fs-sm);max-width:52ch">The Light / Dark control in the sidebar (and mobile header) sets <code>data-theme</code> on <code>&lt;html&gt;</code> and writes <code>localStorage.ab-theme</code>. If nothing is stored, the page follows <code>prefers-color-scheme</code>. Flip it — cards, buttons, quotes, forms, and code slabs should all track.</p>
+          <p class="muted" style="font-size:var(--fs-sm);max-width:52ch">The starburst/crescent icon toggle (shapes sheet assets) in the sidebar (and mobile header) sets <code>data-theme</code> on <code>&lt;html&gt;</code> and writes <code>localStorage.ab-theme</code>. If nothing is stored, the page follows <code>prefers-color-scheme</code>. Flip it — cards, buttons, quotes, forms, and code slabs should all track.</p>
           <pre class="code-block" tabindex="0"><span class="c">/* tokens.css — color is the only layer that swaps */</span>
 <span class="k">:root</span> { <span class="c">/* cream paper defaults */</span>
   <span class="fn">--paper</span>: <span class="s">#F6F1E8</span>;

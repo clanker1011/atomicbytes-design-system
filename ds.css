@@ -1897,23 +1897,26 @@ footer.ds-foot {
   flex-shrink: 0;
 }
 .theme-toggle button {
-  font-family: var(--font-body);
-  font-size: 0.65rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 0;
   background: transparent;
   color: var(--ink);
-  padding: 10px 12px;
+  padding: 10px;
   min-height: var(--tap, 44px);
-  min-width: 0;
+  min-width: var(--tap, 44px);
   cursor: pointer;
   margin: 0;
-  line-height: 1.2;
+  line-height: 0;
   appearance: none;
   -webkit-appearance: none;
   touch-action: manipulation;
+}
+.theme-icon {
+  width: 22px;
+  height: 22px;
+  display: block;
 }
 .theme-toggle button:focus-visible {
   outline-offset: -3px;
@@ -1923,9 +1926,11 @@ footer.ds-foot {
 .theme-toggle button + button {
   border-left: var(--stroke-thin) solid var(--ink);
 }
-.theme-toggle button[aria-pressed="true"] {
+.theme-toggle button[aria-pressed="true"][data-theme-set="light"] {
   background: var(--yolk);
-  color: var(--on-accent);
+}
+.theme-toggle button[aria-pressed="true"][data-theme-set="dark"] {
+  background: var(--print-ink); /* night ink so cobalt crescent pops; never invert to cream */
 }
 .side-nav .theme-toggle {
   display: flex;
@@ -2833,12 +2838,13 @@ footer.ds-foot {
     box-shadow: 2px 2px 0 var(--ink);
   }
   .theme-toggle button {
-    min-height: 0;
-    padding: 6px 12px;
+    min-height: 36px;
+    min-width: 36px;
+    padding: 7px;
   }
   .side-nav .theme-toggle button {
     min-height: 36px;
-    padding: 8px 12px;
+    padding: 7px 12px;
   }
   .nav-chip { min-height: 0; padding: 4px 2px; }
   .nav-chip-pill { min-height: 0; padding: 6px 12px; }
