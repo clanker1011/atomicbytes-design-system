@@ -1926,11 +1926,8 @@ footer.ds-foot {
 .theme-toggle button + button {
   border-left: var(--stroke-thin) solid var(--ink);
 }
-.theme-toggle button[aria-pressed="true"][data-theme-set="light"] {
-  background: var(--yolk);
-}
-.theme-toggle button[aria-pressed="true"][data-theme-set="dark"] {
-  background: var(--print-ink); /* night ink so cobalt crescent pops; never invert to cream */
+.theme-toggle button[aria-pressed="true"] {
+  background: var(--yolk); /* active segment always yolk — reads on cream and night paper */
 }
 .side-nav .theme-toggle {
   display: flex;
