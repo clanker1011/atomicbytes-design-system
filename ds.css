@@ -1898,26 +1898,22 @@ footer.ds-foot {
 }
 .theme-toggle button {
   font-family: var(--font-body);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   border: 0;
   background: transparent;
   color: var(--ink);
-  padding: 10px;
+  padding: 10px 12px;
   min-height: var(--tap, 44px);
-  min-width: 44px;
+  min-width: 0;
   cursor: pointer;
   margin: 0;
-  line-height: 0;
+  line-height: 1.2;
   appearance: none;
   -webkit-appearance: none;
   touch-action: manipulation;
-}
-.theme-icon {
-  width: 22px;
-  height: 22px;
-  display: block;
 }
 .theme-toggle button:focus-visible {
   outline-offset: -3px;
@@ -1927,16 +1923,9 @@ footer.ds-foot {
 .theme-toggle button + button {
   border-left: var(--stroke-thin) solid var(--ink);
 }
-.theme-toggle button[aria-pressed="true"][data-theme-set="light"] {
+.theme-toggle button[aria-pressed="true"] {
   background: var(--yolk);
-  color: var(--ink);
-}
-.theme-toggle button[aria-pressed="true"][data-theme-set="light"] .theme-icon-nucleus {
-  fill: var(--paper);
-}
-.theme-toggle button[aria-pressed="true"][data-theme-set="dark"] {
-  background: var(--ink);
-  color: var(--paper);
+  color: var(--on-accent);
 }
 .side-nav .theme-toggle {
   display: flex;
@@ -2844,13 +2833,12 @@ footer.ds-foot {
     box-shadow: 2px 2px 0 var(--ink);
   }
   .theme-toggle button {
-    min-height: 36px;
-    min-width: 36px;
-    padding: 7px;
+    min-height: 0;
+    padding: 6px 12px;
   }
   .side-nav .theme-toggle button {
     min-height: 36px;
-    padding: 7px 12px;
+    padding: 8px 12px;
   }
   .nav-chip { min-height: 0; padding: 4px 2px; }
   .nav-chip-pill { min-height: 0; padding: 6px 12px; }
