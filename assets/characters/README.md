@@ -13,6 +13,7 @@ Every cast member ships an **SVG source** plus a PNG raster. Prefer SVG for cris
 | `byte-bot.svg` | `byte-bot.png` | Retro robot companion with atom chest screen |
 | `byte-rocket.svg` | `byte-rocket.png` | Energetic rocket mascot (speed / launch moments) |
 | `atomic-mark.svg` | `atomic-mark.png` | Geometric trademark atom (no face) for seals / small monograms |
+| _(pending from Matt)_ | `hard-hat.png` | Construction worker — yolk hard hat, mint coveralls, coral pocket, thumbs up |
 
 **Notes**
 - Full-body / character SVGs were vectorized from the cleaned production PNGs (no pick-sheet letter labels).
