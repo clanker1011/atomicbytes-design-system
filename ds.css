@@ -1,5 +1,39 @@
 /* AtomicBytes Design System — documentation chrome
    Brand mood lives in tokens.css; this file is layout + recipes. */
+
+/* ---------- Display fonts ---------- */
+@font-face {
+  font-family: 'Fontdinerdotcom Sparkly';
+  src: url('assets/fonts/fontdinerdotcom-sparkly-1085/FontdinerdotcomSparkly-x37m.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lounge Bait';
+  src: url('assets/fonts/lounge-bait-2924/LoungeBait-JpVa.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FontDiner Swanky';
+  src: url('assets/fonts/fontdiner-swanky-11451/FontdinerSwanky-3XXX.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Juicebox Script';
+  src: url('assets/fonts/juicebox-script-115744/JuiceboxScriptPersonalUseRegular-lx93q.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 *, *::before, *::after { box-sizing: border-box; }
 html {
   scroll-behavior: smooth;
@@ -522,6 +556,33 @@ code {
   line-height: var(--lh-loose);
   max-width: 48ch;
 }
+
+/* Display font specimens */
+.spec-sparkly {
+  font-family: 'Fontdinerdotcom Sparkly', cursive;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+.spec-lounge {
+  font-family: 'Lounge Bait', cursive;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+.spec-swanky {
+  font-family: 'FontDiner Swanky', cursive;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+.spec-juicebox {
+  font-family: 'Juicebox Script', cursive;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
 .scale-table {
   width: 100%;
   border-collapse: collapse;
