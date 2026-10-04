@@ -44,12 +44,32 @@
   --code-bg: #1C1915;
   --code-fg: #F6F1E8;
   --code-comment: #C4B8A8;
-  --code-keyword: #4B6BFF;   /* cobalt */
+  --code-keyword: #8AA0FF;   /* readable cobalt on the ink slab */
   --code-string: #2EE6A6;    /* mint */
   --code-fn: #FF5B3C;        /* coral */
   --code-num: #FFD84A;       /* yolk */
 
-  /* Semantic aliases — prefer these in components */
+  /* Functional roles — brand inks above remain available for decoration. */
+  --text-primary: var(--ink);
+  --text-secondary: var(--muted);
+  --text-on-action: var(--print-ink);
+  --text-accent: #334FCA;
+  --surface-page: var(--paper);
+  --surface-card: var(--surface);
+  --surface-well: var(--surface-inset);
+  --border-default: var(--line);
+  --border-subtle: var(--rule);
+  --border-error: #C33D22;
+  --border-success: #147851;
+  --border-warning: #806000;
+  --action-primary-bg: var(--coral);
+  --action-primary-fg: var(--text-on-action);
+  --action-primary-hover: #F05235;
+  --action-primary-pressed: #E8492D;
+  --decoration-outline: var(--ink);
+  --decoration-shadow: var(--ink);
+
+  /* Compatibility aliases — use functional roles in new components. */
   --bg: var(--paper);
   --text: var(--ink);
   --text-muted: var(--muted);
@@ -122,17 +142,12 @@
   --stroke-thin: 1.5px;
   --stroke: 2.5px;
   --stroke-thick: 3.5px;
-  --shadow-stamp: 3px 3px 0 var(--ink);
-  --shadow-stamp-hover: 4px 4px 0 var(--ink);
-  --shadow-stamp-press: 1px 1px 0 var(--ink);
+  --shadow-stamp: 3px 3px 0 var(--decoration-shadow);
+  --shadow-stamp-hover: 4px 4px 0 var(--decoration-shadow);
+  --shadow-stamp-press: 1px 1px 0 var(--decoration-shadow);
 
   /* ---------- Layout ---------- */
-  /* DS chrome helpers — this documentation site, not the marketing page. */
-  --wrap: min(1080px, calc(100% - 48px));
-  --nav-width: 220px;
-  --ds-max: 1440px;
-  --tap: 44px;              /* min touch target */
-  --nav-sticky-h: 6.5rem;   /* mobile stacked header; desk uses side-nav */
+  --tap: 44px; /* Minimum standalone control target */
 
   /* Marketing measures — steal these for atomicbytes.com. */
   --content-narrow: 38rem;  /* ~36–40rem; readable body / lede measure */
@@ -152,6 +167,9 @@
   --orbit-fast: 18s;
   --orbit-mid: 22s;
   --orbit-slow: 24s;
+  --motion-fast: 150ms;
+  --motion-standard: 180ms;
+  --motion-easing: linear;
   --motion-lift: 1px;
   --motion-lift-card: 2px;
 }
@@ -162,6 +180,11 @@
  * Outlines and stamp shadows follow --ink (now cream).
  */
 :root[data-theme="dark"] {
+  --text-accent: #8AA0FF;
+  --border-error: var(--coral);
+  --border-success: var(--mint);
+  --border-warning: var(--yolk);
+
   --paper: #241F18;
   --paper-shade: #1C1813;
   --ink: #F3EDE2;
@@ -191,6 +214,11 @@
 /* OS preference only when the user has not pinned Light. Explicit Dark is above. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
+    --text-accent: #8AA0FF;
+    --border-error: var(--coral);
+    --border-success: var(--mint);
+    --border-warning: var(--yolk);
+
     --paper: #241F18;
     --paper-shade: #1C1813;
     --ink: #F3EDE2;

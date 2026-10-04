@@ -7,28 +7,12 @@
   <meta name="color-scheme" content="light dark">
   <meta name="description" content="AtomicBytes design system — tokens, components, characters, and voice for the mid-century atomic brand.">
   <title>AtomicBytes · Design System</title>
-  <script>
-    (function () {
-      var KEY = "ab-theme";
-      var stored = null;
-      try { stored = localStorage.getItem(KEY); } catch (e) {}
-      var theme;
-      if (stored === "light" || stored === "dark") {
-        theme = stored;
-      } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        theme = "dark";
-      } else {
-        theme = "light";
-      }
-      document.documentElement.setAttribute("data-theme", theme);
-      var meta = document.querySelector('meta[name="theme-color"]');
-      if (meta) meta.setAttribute("content", theme === "dark" ? "#241F18" : "#F6F1E8");
-    })();
-  </script>
+  <script src="theme.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="components.css">
   <link rel="stylesheet" href="ds.css">
 </head>
 <body id="top">
@@ -48,16 +32,18 @@
           </button>
         </div>
       </div>
-      <ol class="top-nav-links">
+      <ol class="top-nav-links"><li><button class="doc-control" type="button" data-search-open aria-label="Search the system">Search</button></li>
         <li><a href="#intro">Intro</a></li>
         <li><a href="#principles">Principles</a></li>
         <li><a href="#responsive">Responsive</a></li>
         <li><a href="#color">Color</a></li>
         <li><a href="#theming">Theming</a></li>
+        <li><a href="#semantics">Functional tokens</a></li>
         <li><a href="#paper-patterns">Paper patterns</a></li>
         <li><a href="#typography">Type</a></li>
         <li><a href="#space">Space</a></li>
         <li><a href="#layout">Layout</a></li>
+        <li><a href="#expression">Expression</a></li>
         <li><a href="#logo">Logo</a></li>
         <li><a href="#characters">Characters</a></li>
         <li><a href="#labels">Labels</a></li>
@@ -70,6 +56,7 @@
         <li><a href="#blog">Blog example</a></li>
         <li><a href="#voice">Voice</a></li>
         <li><a href="#adoption">Adoption</a></li>
+        <li><a href="#release">Release</a></li>
       </ol>
     </div>
   </header>
@@ -88,28 +75,38 @@
           <img class="theme-icon" src="assets/shapes/crescent.svg" alt="" width="22" height="22" decoding="async">
         </button>
       </div>
+      <button class="doc-control" type="button" data-search-open>Search the system</button>
       <ol>
         <li><a href="#intro"><span class="n">01</span> Intro</a></li>
+        <li class="nav-group">Foundations</li>
         <li><a href="#principles"><span class="n">02</span> Principles</a></li>
         <li><a href="#responsive"><span class="n">03</span> Responsiveness</a></li>
         <li><a href="#color"><span class="n">04</span> Color</a></li>
         <li><a href="#theming"><span class="n">05</span> Theming</a></li>
+        <li><a href="#semantics">Functional tokens</a></li>
         <li><a href="#paper-patterns"><span class="n">05b</span> Paper patterns</a></li>
         <li><a href="#typography"><span class="n">06</span> Typography</a></li>
         <li><a href="#space"><span class="n">07</span> Space</a></li>
+        <li class="nav-group">Composition</li>
         <li><a href="#layout"><span class="n">08</span> Layout</a></li>
+        <li><a href="#expression">Expression</a></li>
+        <li class="nav-group">Brand assets</li>
         <li><a href="#logo"><span class="n">09</span> Logo</a></li>
         <li><a href="#characters"><span class="n">10</span> Characters</a></li>
         <li><a href="#labels"><span class="n">11</span> Labels</a></li>
         <li><a href="shapes.html"><span class="n">12</span> Shapes</a></li>
         <li><a href="#icons"><span class="n">13</span> Icons</a></li>
+        <li class="nav-group">Interaction</li>
         <li><a href="#motion"><span class="n">14</span> Motion</a></li>
         <li><a href="#components"><span class="n">15</span> Components</a></li>
+        <li class="nav-group">Publishing</li>
         <li><a href="#code"><span class="n">16</span> Code</a></li>
         <li><a href="#quotes"><span class="n">17</span> Quotes</a></li>
         <li><a href="#blog"><span class="n">18</span> Blog example</a></li>
         <li><a href="#voice"><span class="n">19</span> Voice</a></li>
+        <li class="nav-group">Adoption</li>
         <li><a href="#adoption"><span class="n">20</span> Adoption</a></li>
+        <li><a href="#release">Release</a></li>
       </ol>
       <p class="nav-foot">
         <strong>Source of truth</strong><br>
@@ -118,12 +115,19 @@
     </nav>
 
     <div class="content">
+      <div class="doc-tools" aria-label="Reference tools">
+        <p>AtomicBytes <strong>0.1.0</strong> · review release</p>
+        <button class="doc-control" type="button" data-search-open>Search the system</button>
+        <label for="section-picker">Jump to</label>
+        <select id="section-picker" aria-label="Jump to section"><option value="">Choose a section</option></select>
+      </div>
+
       <main id="main">
 
         <!-- ========== INTRO ========== -->
         <section id="intro" class="ds-section" aria-labelledby="intro-title">
           <div class="intro-hero">
-            <span class="intro-stamp">v0 · print lab</span>
+            <span class="intro-stamp">0.1.0 · print lab</span>
             <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> Design system</p>
             <h1 id="intro-title">Tokens, type, and characters for <em>AtomicBytes.</em></h1>
             <p class="lede" style="margin-top: var(--space-24)">
@@ -349,7 +353,7 @@
             <div class="rule-card do">
               <h3><span class="badge do">Do</span> Ink rules</h3>
               <ul>
-                <li>Body text is always ink on paper or surface</li>
+                <li>Body text uses --text-primary on paper or surface</li>
                 <li>Accent fills carry ink type <em>and</em> an ink stroke</li>
                 <li>Links: ink type, cobalt underline</li>
                 <li>Focus: 3px cobalt ring, 3px offset</li>
@@ -467,7 +471,7 @@
               <tr>
                 <td><code>--on-accent</code></td>
                 <td colspan="2"><span class="chip-mini" style="background:#1C1915"></span><span class="hex">#1C1915</span> — always print-ink</td>
-                <td>Type sitting on coral / mint / yolk / cobalt fills</td>
+                <td>Type sitting on coral / mint / yolk fills; use a tested text pair before adding cobalt fills</td>
               </tr>
             </tbody>
           </table>
@@ -507,15 +511,15 @@
           <div class="pattern-compare" aria-label="Side-by-side paper pattern swatches">
             <figure class="pattern-swatch">
               <div class="pattern-stage pattern-a pattern-stage--bare" role="img" aria-label="Workshop grid specimen"></div>
-              <figcaption><span class="pattern-kicker">A · current</span> Workshop grid</figcaption>
+              <figcaption><span class="pattern-kicker">A · stable</span> Workshop grid</figcaption>
             </figure>
             <figure class="pattern-swatch">
               <div class="pattern-stage pattern-b pattern-stage--bare" role="img" aria-label="Dot paper specimen"></div>
-              <figcaption><span class="pattern-kicker">B · candidate</span> Dot paper</figcaption>
+              <figcaption><span class="pattern-kicker">B · experimental</span> Dot paper</figcaption>
             </figure>
             <figure class="pattern-swatch">
               <div class="pattern-stage pattern-c pattern-stage--bare" role="img" aria-label="Sparse sparks specimen"></div>
-              <figcaption><span class="pattern-kicker">C · candidate</span> Sparse sparks</figcaption>
+              <figcaption><span class="pattern-kicker">C · experimental</span> Sparse sparks</figcaption>
             </figure>
           </div>
 
@@ -523,7 +527,7 @@
             <li class="pattern-card">
               <div class="pattern-stage pattern-a">
                 <div class="pattern-sample-card">
-                  <span class="pattern-kicker">A · current</span>
+                  <span class="pattern-kicker">A · stable</span>
                   <strong>Workshop grid</strong>
                   <p>Faint desk grid + film grain. What the DS uses today.</p>
                 </div>
@@ -536,7 +540,7 @@
             <li class="pattern-card">
               <div class="pattern-stage pattern-b">
                 <div class="pattern-sample-card">
-                  <span class="pattern-kicker">B · candidate</span>
+                  <span class="pattern-kicker">B · experimental</span>
                   <strong>Dot paper</strong>
                   <p>Soft risograph dots. More fiber, still readable.</p>
                 </div>
@@ -549,7 +553,7 @@
             <li class="pattern-card">
               <div class="pattern-stage pattern-c">
                 <div class="pattern-sample-card">
-                  <span class="pattern-kicker">C · candidate</span>
+                  <span class="pattern-kicker">C · experimental</span>
                   <strong>Sparse sparks</strong>
                   <p>A few tiny sparks in brand colors. Band accent, not full-page wallpaper.</p>
                 </div>
@@ -595,11 +599,29 @@
 }</pre>
         </section>
 
+
+        <section id="semantics" class="ds-section" aria-labelledby="semantics-title">
+          <p class="sec-kicker">05c · Foundations</p><h2 id="semantics-title">Functional tokens</h2>
+          <p class="lede">Choose a role first. Brand inks decorate; functional tokens carry text, boundaries, and actions across themes.</p>
+          <div class="table-scroll"><table class="theme-map"><thead><tr><th>Role</th><th>Tokens</th><th>Use</th></tr></thead><tbody>
+          <tr><td>Text</td><td><code>--text-primary</code><br><code>--text-secondary</code><br><code>--text-on-action</code><br><code>--text-accent</code></td><td>Reading, hints, filled actions, short accent labels</td></tr>
+          <tr><td>Surface</td><td><code>--surface-page</code><br><code>--surface-card</code><br><code>--surface-well</code></td><td>Page, raised content, inset content</td></tr>
+          <tr><td>Border</td><td><code>--border-default</code><br><code>--border-subtle</code><br><code>--border-error</code><br><code>--border-success</code><br><code>--border-warning</code></td><td>Boundaries and form states; focus always uses --focus</td></tr>
+          <tr><td>Primary action</td><td><code>--action-primary-bg</code><br><code>--action-primary-fg</code><br><code>--action-primary-hover</code><br><code>--action-primary-pressed</code></td><td>Coral action with fixed print-ink foreground</td></tr>
+          <tr><td>Decoration</td><td><code>--decoration-outline</code><br><code>--decoration-shadow</code></td><td>Illustration outlines and stamp shadows, independent of text roles</td></tr>
+          </tbody></table></div>
+          <p class="reference-note"><span class="status">Deprecated</span> Numbered aliases --accent-2, --accent-3, --accent-4 remain for compatibility. Use --focus, --mint, or --yolk according to purpose in new code.</p>
+          <h3 style="margin-top:var(--space-32)">Approved contrast pairs</h3>
+          <p class="comp-note">Ratios below are calculated from the active theme’s tokens. Text requires 4.5:1; control boundaries and focus require 3:1. Both themes are checked by scripts/check.py. This matrix is not a complete accessibility audit.</p>
+          <div class="table-scroll"><table class="theme-map" id="contrast-matrix"><thead><tr><th>Use</th><th>Foreground / background</th><th>Ratio</th><th>Minimum</th></tr></thead><tbody></tbody></table></div>
+          <p class="reference-note">Before adoption, check keyboard focus and activation, descriptive labels and errors, 200% text zoom, reflow at 320px, and reduced motion. Inline links stay underlined; functional icons need a text label or accessible name.</p>
+        </section>
+
         <!-- ========== TYPOGRAPHY ========== -->
         <section id="typography" class="ds-section" aria-labelledby="type-title">
           <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 06</p>
           <h2 id="type-title">Typography</h2>
-          <p class="lede">Three families. No Inter. No fourth face without a reason. Plus display faces for special occasions.</p>
+          <p class="lede">Three approved families: Sixtyfour Convergence for the wordmark, Fraunces for headings, and Figtree for reading and controls. Specialty faces below are experiments, not approved identity options.</p>
 
           <div class="type-card">
             <div class="type-label">
@@ -626,13 +648,13 @@
             <p class="spec-body">AtomicBytes builds web and mobile products that feel good to use—and hold up over time. Small-team energy, serious craft.</p>
           </div>
 
-          <h3 style="font-size:var(--fs-xl);margin-top:var(--space-48);margin-bottom:var(--space-16)">Display fonts</h3>
-          <p class="muted" style="font-size:var(--fs-sm);max-width:52ch;margin-bottom:var(--space-16)">Specialty faces for headlines, logos, and moments that need personality. Use sparingly—these are accent players, not everyday body type.</p>
+          <h3 style="font-size:var(--fs-xl);margin-top:var(--space-48);margin-bottom:var(--space-16)">Experimental display fonts <span class="status">Experimental</span></h3>
+          <p class="muted" style="font-size:var(--fs-sm);max-width:52ch;margin-bottom:var(--space-16)">Exploration only. Do not use these for the wordmark, navigation, or body copy. A campaign exception needs a named use case and approval before adoption; until then, use Fraunces.</p>
 
           <div class="type-card">
             <div class="type-label">
               <span class="family">FontDiner Swanky</span>
-              <span class="role">AtomicBytes logo / wordmark face</span>
+              <span class="role">Experimental campaign face · not the wordmark</span>
             </div>
             <p class="spec-swanky">AtomicBytes</p>
             <p class="spec-swanky" style="margin-top: var(--space-8); font-size: clamp(1.25rem, 3vw, 2rem);">Mid-century modern vibes</p>
@@ -665,6 +687,7 @@
             <p class="spec-juicebox" style="margin-top: var(--space-8); font-size: clamp(1.25rem, 3vw, 2rem);">Fresh hand-lettered energy</p>
           </div>
 
+          <div class="reference-note"><h3>Approved type recipes</h3><p>Wordmark: Sixtyfour Convergence, 14–18px, line height 1.3, tracking 0.02em. Headings: Fraunces 600, SOFT 60, WONK 1, tight line height 1.05. Body: Figtree 400, 16px, line height 1.55. Controls: Figtree 600, 16px, line height 1.2.</p><p>Code uses the system monospace stack. Font fallbacks must preserve readable wrapping; the identity remains Sixtyfour Convergence even while its font loads.</p></div>
           <h3 style="font-size:var(--fs-xl);margin-top:var(--space-48);margin-bottom:var(--space-16)">Type scale</h3>
 
           <div class="table-scroll">
@@ -741,7 +764,7 @@
             <div class="token-row" role="listitem"><span class="label">--space-64</span><div class="bar-wrap"><div class="bar" style="width:64px"></div></div><span class="val">64px</span></div>
           </div>
 
-          <h3 style="font-size:var(--fs-xl);margin-top:var(--space-32);margin-bottom:var(--space-8)">Radius</h3>
+          <h3 style="font-size:var(--fs-xl);margin-top:var(--space-32);margin-bottom:var(--space-8)">Radius</h3><p class="comp-note">sm 8px · md 14px · lg 22px · chunky 18px 24px 16px 22px · pill 999px. Quiet surfaces use sm; standard cards use md; expressive buttons use chunky.</p>
           <ul class="radius-demo">
             <li>
               <div class="shape" style="border-radius:var(--radius-sm)"></div>
@@ -942,6 +965,12 @@
           </div>
         </section>
 
+
+        <section id="expression" class="ds-section" aria-labelledby="expression-title">
+          <p class="sec-kicker">08b · Composition</p><h2 id="expression-title">Three levels of expression</h2>
+          <p class="lede">The same content, with a different amount of ink. Choose a level per section; reserve expressive moments for a page’s opening or final invitation.</p>
+          <div class="expression-grid">
+<div class="expression-example" data-expression="quiet"><p><strong>Quiet</strong><br>Reading, forms, supporting content. Thin border; no shadow, tilt, strips, or characters.</p><article class="card"><span class="stamp">From the workshop</span><h3>A better first tap</h3><p>Give the next action room to breathe. Keep the label clear, then let the ink do the rest.</p><a class="text-link" href="specimens.html#case-study">Read the case study</a></article></div><div class="expression-example" data-expression="standard"><p><strong>Standard</strong><br>Everyday navigation and cards. Straight edges, one accent, and a restrained stamp shadow.</p><article class="card"><span class="stamp">From the workshop</span><h3>A better first tap</h3><p>Give the next action room to breathe. Keep the label clear, then let the ink do the rest.</p><a class="text-link" href="specimens.html#case-study">Read the case study</a></article></div><div class="expression-example" data-expression="expressive"><p><strong>Expressive</strong><br>Heroes, campaigns, launches. Thick outline, slight tilt, and one lead character or sticker.</p><article class="card"><span class="stamp">From the workshop</span><h3>A better first tap</h3><p>Give the next action room to breathe. Keep the label clear, then let the ink do the rest.</p><a class="text-link" href="specimens.html#case-study">Read the case study</a></article></div></div><div class="reference-note"><p>Apply <code>data-expression="quiet"</code>, <code>standard</code>, or <code>expressive</code> to a section. Keep body copy on solid paper. The docs below demonstrate the same reusable .card recipe.</p><p><a class="text-link" href="specimens.html">Open full-page specimens</a> — landing, case study, article, and contact flow. Each page uses tokens.css and components.css without documentation CSS.</p></div></section>
         <!-- ========== LOGO ========== -->
         <section id="logo" class="ds-section" aria-labelledby="logo-title">
           <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 09</p>
@@ -1183,8 +1212,8 @@
                 <img src="assets/characters/hard-hat.png" alt="Hard Hat — mid-century construction worker with yolk hard hat, mint coveralls, and coral pocket, giving a thumbs up" width="200" height="200" loading="lazy">
               </div>
               <div class="char-body">
-                <h3>Hard Hat</h3>
-                <span class="file">hard-hat.png — SVG pending from Matt</span>
+                <h3>Hard Hat <span class="status">Experimental</span></h3>
+                <span class="file">hard-hat.png · PNG available · SVG pending</span>
                 <p>Construction worker mascot. Mid-century optimism — yolk hard hat, mint coveralls, coral pocket, thumbs up. Suited to construction and building.</p>
                 <p class="char-usage">Use: building stories, setup moments, construction and infrastructure scenes.</p>
               </div>
@@ -1194,7 +1223,7 @@
           <div class="usage-callout">
             <h3>When to use which</h3>
             <ul>
-              <li><strong>AtomicByte is the logo</strong> — same asset in Logo and Characters. Header, favicon, hero. Keep the face when you shrink it. Every cast member ships a <code>.svg</code> source next to the PNG.</li>
+              <li><strong>AtomicByte is the logo</strong> — same asset in Logo and Characters. Header, favicon, hero. Keep the face when you shrink it. Use the available downloads below. Seven characters have SVG and PNG; Hard Hat is experimental and PNG-only until a vector source is approved.</li>
               <li><strong>Full characters (Salesman, Bot, Rocket)</strong> — personality beats. One at a time on a surface; don’t cast the whole crew in one card.</li>
               <li><strong>Trademark (AtomicMark)</strong> — geometric, no face. Seals, legal, quiet corners.</li>
               <li><strong>Rejected</strong> — Lab Tech. Do not include in the system or the live site.</li>
@@ -1395,7 +1424,7 @@
             <div class="rule-card do">
               <h3><span class="badge do">Do</span> Stroke</h3>
               <ul>
-                <li>2–2.5px ink stroke (<code>--stroke-thin</code> to <code>--stroke</code>)</li>
+                <li>2.5px ink stroke (<code>--stroke</code>) on a 48px viewBox</li>
                 <li>Rounded caps and joins</li>
                 <li>Simple geometry: window, spark, check, calendar, nodes, rocket</li>
                 <li>Optional coral <code>.mark</code> on a single accent path</li>
@@ -1414,7 +1443,7 @@
 
           <ul class="doodle-grid">
             <li class="doodle-card">
-              <svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="6" y="10" width="28" height="22" rx="3"/>
                 <path d="M6 16h28"/>
                 <circle cx="10.5" cy="13" r="1.1" fill="currentColor"/>
@@ -1424,7 +1453,7 @@
               <span>Apps window</span>
             </li>
             <li class="doodle-card">
-              <svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
                 <path d="M10 30c8-14 20-14 28 0"/>
                 <path d="M24 12v6"/>
                 <circle cx="24" cy="10" r="2" fill="currentColor"/>
@@ -1433,14 +1462,14 @@
               <span>Spark</span>
             </li>
             <li class="doodle-card">
-              <svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="24" cy="24" r="14"/>
                 <path class="mark" d="M16 24.5l5 5 11-12"/>
               </svg>
               <span>Check</span>
             </li>
             <li class="doodle-card">
-              <svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
                 <rect x="10" y="12" width="28" height="26" rx="3"/>
                 <path d="M10 20h28M18 12v-4M30 12v-4"/>
                 <path d="M16 28l4 4 10-10" class="mark"/>
@@ -1448,7 +1477,7 @@
               <span>Calendar</span>
             </li>
             <li class="doodle-card">
-              <svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
                 <circle cx="12" cy="24" r="6"/>
                 <circle cx="36" cy="16" r="6"/>
                 <circle cx="32" cy="34" r="6"/>
@@ -1457,7 +1486,7 @@
               <span>Nodes</span>
             </li>
             <li class="doodle-card">
-              <svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M24 6c3 8 5 16 3.5 24h-7C19 22 21 14 24 6z"/>
                 <path d="M20.5 30l-5 8M27.5 30l5 8"/>
                 <path d="M21 30h6l-3 7z" fill="var(--coral)" stroke="currentColor"/>
@@ -1536,11 +1565,12 @@
         <section id="components" class="ds-section" aria-labelledby="components-title">
           <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 15</p>
           <h2 id="components-title">Components</h2>
-          <p class="lede">Live recipes using the tokens. Chunky ink outline, stamp shadow, coral fill primary — the button the user liked.</p>
+          <p class="lede">Stable recipes from components.css. The examples and standalone specimens use the same styles; copy the markup below each recipe.</p>
 
           <div class="comp-block">
             <h3>Button</h3>
             <p class="comp-note">Figtree 600, ink outline, stamp shadow, chunky radius. Primary fills coral. Secondary is surface. Hover lifts 1px and lengthens the stamp.</p>
+            <p class="reference-note">Use an anchor for navigation and a native button for an action. Buttons support Enter and Space; links support Enter. Loading keeps its purpose clear and uses disabled plus aria-busy=&quot;true&quot;. Native disabled prevents activation; aria-disabled on a link requires the app to block activation. Labels may wrap; decorative icons use aria-hidden=&quot;true&quot;. Hover and pressed timing: --motion-fast (150ms), linear.</p>
             <div class="playground">
               <a class="btn btn-fill" href="#adoption">Primary — Say hi</a>
               <a class="btn btn-ghost" href="#characters">Secondary</a>
@@ -1551,7 +1581,8 @@
 
           <div class="comp-block">
             <h3>Card</h3>
-            <p class="comp-note">Surface fill, thick ink outline, slight tilt. Optional mint strip, yolk sticker, or coral stamp label. Collage, not a 2×2 icon grid.</p>
+            <p class="comp-note">Static cards do not move on hover. Use a card--link anchor for a navigable card; choose quiet, standard, or expressive composition before adding decoration.</p>
+            <p class="reference-note">Use article.card for static content. Use a.card.card--link for one destination, with the title providing its name. Do not nest buttons or links inside a linked card. Only linked cards lift on hover. A text-only card is the supported fallback when an image is unavailable.</p>
             <div class="playground" style="align-items:stretch">
               <article class="card">
                 <span class="stamp">builds &amp; rebuilds</span>
@@ -1570,6 +1601,7 @@
           <div class="comp-block">
             <h3>Stamp</h3>
             <p class="comp-note">Tiny tracked Figtree or brand font, coral or ink outline, a degree or two of rotation.</p>
+            <p class="reference-note">Stamps communicate metadata, not actions. Their text stays ink even when the outline uses coral. Use a button or link for an interactive label; do not give a span a tabindex.</p>
             <div class="playground">
               <span class="stamp">builds &amp; rebuilds</span>
               <span class="stamp ink">the last 10%</span>
@@ -1581,6 +1613,7 @@
           <div class="comp-block">
             <h3>Nav chip</h3>
             <p class="comp-note">Ink type with cobalt underline on hover, or a pill chip for compact mobile nav.</p>
+            <p class="reference-note">Current location uses aria-current=&quot;page&quot; for page navigation (or &quot;location&quot; for a section). Each target is at least 44px. An inline link in running prose is not a nav chip.</p>
             <div class="playground">
               <a class="nav-chip" href="#intro">Work</a>
               <a class="nav-chip" href="#principles">Studio</a>
@@ -1613,7 +1646,7 @@
             <h3>Blog · Issue 00 magazine tray</h3>
             <p class="comp-note">Empty on purpose. Issue number + “first note coming soon.” Do not invent posts to make the page feel populated. Paper-shade well, dashed inset tray, yolk proof stamp.</p>
             <div class="issue">
-              <svg class="clip" viewBox="0 0 28 36" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2">
+              <svg class="clip" viewBox="0 0 28 36" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5">
                 <rect x="8" y="10" width="12" height="22" rx="2"/>
                 <path d="M10 10v-4a4 4 0 0 1 8 0v4"/>
               </svg>
@@ -1634,12 +1667,13 @@
           <div class="comp-block">
             <h3>Field</h3>
             <p class="comp-note">Figtree label, surface fill, ink stroke, stamp shadow. Cobalt focus ring by default. Pair with a coral “Say hi” when it’s a capture form.</p>
+            <p class="reference-note">Associate every hint and message using aria-describedby. Mark required fields with required and visible “required” text; explicitly label optional fields. Validate on submit, then on input while correcting errors. Keep the cobalt focus ring in all states. Submission failures preserve entered values and offer a retry; success is announced through role=&quot;status&quot;.</p>
             <div class="playground">
               <form class="field-row" action="#" method="get" onsubmit="event.preventDefault(); return false;">
                 <div class="field">
                   <label for="say-hi-email">Email</label>
-                  <input id="say-hi-email" name="email" type="email" autocomplete="email" placeholder="you@studio.com">
-                  <p class="field-hint">We’ll only use this to write back.</p>
+                  <input id="say-hi-email" name="email" type="email" autocomplete="email" placeholder="you@studio.com" aria-describedby="say-hi-hint">
+                  <p class="field-hint" id="say-hi-hint">Specimen only; this field does not send email.</p>
                 </div>
                 <button class="btn btn-fill" type="button">Say hi</button>
               </form>
@@ -1648,23 +1682,23 @@
 
           <div class="comp-block">
             <h3>Field states</h3>
-            <p class="comp-note">State color lives on the border, stamp shadow, and message mark — not the sentence. Helper copy stays ink/muted so it clears WCAG on cream and night paper. Coral = error, mint = success, yolk = warning.</p>
+            <p class="comp-note">State color lives on the border and message mark. Functional border tokens use deeper coral, mint, and yolk in light mode for contrast. Messages stay readable ink; focus stays cobalt in every state.</p>
             <div class="playground">
               <ul class="field-state-grid">
                 <li class="field-state-card">
                   <span class="state-tag">Default</span>
                   <div class="field">
                     <label for="field-default">Name</label>
-                    <input id="field-default" type="text" placeholder="Matt Sell" value="">
-                    <p class="field-hint">Optional helper under the field.</p>
+                    <input id="field-default" type="text" placeholder="Matt Sell" value="" aria-describedby="field-default-hint">
+                    <p class="field-hint" id="field-default-hint">Optional helper under the field.</p>
                   </div>
                 </li>
                 <li class="field-state-card">
                   <span class="state-tag">Focus</span>
                   <div class="field">
                     <label for="field-focus">Email</label>
-                    <input id="field-focus" type="email" value="hello@atomicbytes.com" class="is-demo-focus">
-                    <p class="field-hint">Tab here — cobalt ring, 3px / 3px offset.</p>
+                    <input id="field-focus" type="email" value="hello@atomicbytes.com" class="is-demo-focus" aria-describedby="field-focus-hint">
+                    <p class="field-hint" id="field-focus-hint">Tab here — cobalt ring, 3px / 3px offset.</p>
                   </div>
                 </li>
                 <li class="field-state-card">
@@ -1672,7 +1706,7 @@
                   <div class="field is-error">
                     <label for="field-error">Email</label>
                     <input id="field-error" type="email" value="not-an-email" aria-invalid="true" aria-describedby="field-error-msg">
-                    <p class="field-msg" id="field-error-msg" role="alert">That doesn’t look like an email.</p>
+                    <p class="field-msg" id="field-error-msg">That doesn’t look like an email.</p>
                   </div>
                 </li>
                 <li class="field-state-card">
@@ -1695,8 +1729,8 @@
                   <span class="state-tag">Disabled</span>
                   <div class="field is-disabled">
                     <label for="field-disabled">Invite code</label>
-                    <input id="field-disabled" type="text" value="AB-0000" disabled>
-                    <p class="field-hint">Unavailable in this demo.</p>
+                    <input id="field-disabled" type="text" value="AB-0000" disabled aria-describedby="field-disabled-hint">
+                    <p class="field-hint" id="field-disabled-hint">Unavailable in this demo.</p>
                   </div>
                 </li>
               </ul>
@@ -1706,7 +1740,7 @@
               <div class="rule-card do">
                 <h3><span class="badge do">Do</span> Form states</h3>
                 <ul>
-                  <li>Put coral / mint / yolk on the border and the message mark</li>
+                  <li>Use --border-error / --border-success / --border-warning on borders and message marks</li>
                   <li>Keep the message sentence in ink (or muted for hints)</li>
                   <li>Wire <code>aria-invalid</code> and <code>aria-describedby</code> on error</li>
                   <li>Use <code>role="alert"</code> for error messages that appear after submit</li>
@@ -1887,7 +1921,7 @@
         <section id="blog" class="ds-section" aria-labelledby="blog-title">
           <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> 18</p>
           <h2 id="blog-title">Blog example</h2>
-          <p class="lede">A composed specimen — lorem in the paragraphs, real recipes for quotes and snippets. Not a live Issue; the magazine tray stays empty on purpose.</p>
+          <p class="lede">A reading specimen with realistic technical copy. This is a sample article, not a published Issue; the magazine tray stays empty.</p>
 
           <article class="post">
             <div class="post-kicker">
@@ -1895,24 +1929,24 @@
               <span class="post-meta">Notes · 29 Aug 2026</span>
             </div>
             <h3 class="post-title">Feel-good motion is <em>180 milliseconds,</em> linear.</h3>
-            <p class="post-lede">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae nisl at arcu gravida pulvinar — the last 10% people notice, written down so we do not bounce it later.</p>
+            <p class="post-lede">Small movements help a button feel physical. A short, linear transition keeps the stamp attached to the action without delaying the next tap.</p>
 
             <div class="post-body">
-              <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. We still ship like a shop: one accent, thick ink, no pulse.</p>
+              <p>Start with the interaction. A hover can lift the stamp one pixel; pressing it brings the shadow closer. Static reading cards stay still, because they are not controls.</p>
 
               <blockquote class="quote">
                 <p>Orbits stay slow. Stamp hover is a 1–2px lift, not a bounce.</p>
                 <footer>Motion, this system</footer>
               </blockquote>
 
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. The helper lives in <code>feel-good.ts</code> and you wire it once — do not paste a 40-line spring config into the post.</p>
+              <p>Keep timing in one place. The helper lives in <code>feel-good.ts</code> and you wire it once — do not paste a 40-line spring config into the post.</p>
 
               <blockquote class="quote quote-callout">
                 <p>If it glows, it isn&apos;t ours.</p>
                 <footer>Principles · stickers, not glows</footer>
               </blockquote>
 
-              <p>Excepteur sint occaecat cupidatat non proident. A short function is enough; language-tag the fence <code>ts</code> when you publish.</p>
+              <p>A short function is enough; language-tag the fence <code>ts</code> when you publish.</p>
 
               <figure class="code-figure">
                 <figcaption class="code-filename">feel-good.ts</figcaption>
@@ -1925,7 +1959,7 @@
 }</code></pre>
               </figure>
 
-              <p>Sunt in culpa qui officia deserunt mollit anim id est laborum. Config stays a fragment — link the full file in the repo if someone needs the rest.</p>
+              <p>Config stays a fragment. Link the full file when a reader needs surrounding context, and use a filename tab so the snippet has a home.</p>
 
               <figure class="code-figure">
                 <figcaption class="code-filename">.eslintrc.json</figcaption>
@@ -1935,7 +1969,7 @@
 }</code></pre>
               </figure>
 
-              <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur. To ship the note, you do not screenshot a terminal — you write the two commands.</p>
+              <p>A terminal example should be selectable text. Keep the commands short, explain the expected result, and leave out a blinking cursor.</p>
 
               <figure class="code-figure">
                 <figcaption class="code-filename">shell</figcaption>
@@ -1943,7 +1977,7 @@
 <span class="prompt">$</span>git status</code></pre>
               </figure>
 
-              <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet. That is the whole post: a pause, a helper, a config chip, two commands. Then back to the bench.</p>
+              <p>Finally, try the page with reduced motion enabled. The information and controls should remain complete when every decorative orbit and lift is still.</p>
             </div>
           </article>
         </section>
@@ -1986,11 +2020,12 @@
           <h2 id="adoption-title">Adoption</h2>
           <p class="lede">How to use <code>tokens.css</code> in a future site. This design-system folder is the source of truth before the marketing rebuild.</p>
 
+          <div class="asset-downloads"><a class="text-link" href="tokens.css" download>Download tokens.css</a><a class="text-link" href="components.css" download>Download components.css</a><a class="text-link" href="theme.js" download>Download theme.js</a></div>
           <ol class="steps">
             <li>
               <div>
-                <strong>Copy the tokens</strong>
-                <p>Bring <code>design-system/tokens.css</code> (or the <code>:root</code> block) into the real site as the single color/type/space source.</p>
+                <strong>Use the versioned styles</strong>
+                <p>Take <code>tokens.css</code> and <code>components.css</code> from the same tagged release. Load tokens first; keep the release version in your dependency notes. Do not copy only the :root block: theme overrides are part of the contract.</p>
               </div>
             </li>
             <li>
@@ -2007,8 +2042,8 @@
             </li>
             <li>
               <div>
-                <strong>Rebuild components from recipes</strong>
-                <p>Buttons, cards, stamps, links, magazine tray, fields, focus — rebuild against this page rather than tinting old glass cards cream.</p>
+                <strong>Reuse the canonical recipes</strong>
+                <p>Use the classes and copyable markup below. Do not copy ds.css; it contains the reference site’s navigation, experiments, and specimen framing. Start standalone pages with class="ab-site" on the body.</p>
               </div>
             </li>
             <li>
@@ -2027,16 +2062,28 @@
 
           <pre class="code-block" tabindex="0"><span class="c">&lt;!-- In the future marketing site --&gt;</span>
 <span class="k">&lt;link</span> <span class="s">rel</span>=<span class="s">"stylesheet"</span> <span class="s">href</span>=<span class="s">"/tokens.css"</span><span class="k">&gt;</span>
+&lt;link rel="stylesheet" href="/components.css"&gt;
+&lt;!-- Optional theme toggle controller --&gt;
+&lt;script src="/theme.js"&gt;&lt;/script&gt;
 
 <span class="c">/* Components consume semantic aliases */</span>
 .btn-fill {
-  background: <span class="s">var(--accent)</span>;       <span class="c">/* coral */</span>
-  color: <span class="s">var(--ink)</span>;
+  background: <span class="s">var(--action-primary-bg)</span>;       <span class="c">/* coral */</span>
+  color: <span class="s">var(--action-primary-fg)</span>;
   border: <span class="s">var(--stroke-thick)</span> solid <span class="s">var(--ink)</span>;
   border-radius: <span class="s">var(--radius-chunky)</span>;
   box-shadow: <span class="s">var(--shadow-stamp)</span>;
 }</pre>
         </section>
+
+        <section id="release" class="ds-section" aria-labelledby="release-title">
+          <p class="sec-kicker">21 · Maintenance</p><h2 id="release-title">Release &amp; status</h2>
+          <p class="lede">0.1.0 · proposed review release. This version is a local review candidate until approved and tagged.</p>
+          <div class="reference-note"><p><span class="status">Stable</span> Approved identity, core tokens, and component recipes. Changes need light/dark and keyboard checks.</p><p><span class="status">Experimental</span> Specialty fonts, alternate paper patterns, and Hard Hat’s pending vector asset. Explore in specimens; do not adopt as default identity.</p><p><span class="status">Deprecated</span> Compatibility aliases remain while consumers move to functional tokens.</p></div>
+          <h3 style="margin-top:var(--space-24)">0.1.0 changes</h3><ul style="padding-left:var(--space-24);margin-top:var(--space-16)"><li>Canonical component stylesheet separated from documentation chrome.</li><li>Functional colors, corrected contrast, and consistent focus in form states.</li><li>One approved wordmark, explicit experiments, and asset availability.</li><li>Search, section navigation, copyable recipes, and asset downloads.</li><li>Quiet / standard / expressive compositions and full-page specimens.</li></ul>
+          <p class="reference-note">Maintainer: AtomicBytes. Propose new tokens and variants with a concrete use case, a working specimen, and both-theme verification. Record breaking changes and migration guidance before removing a stable recipe.</p>
+        </section>
+
       </main>
 
       <footer class="ds-foot">
@@ -2046,91 +2093,18 @@
     </div>
   </div>
 
-  <script>
-    (function () {
-      var KEY = "ab-theme";
-      var root = document.documentElement;
-      var toggles = Array.prototype.slice.call(document.querySelectorAll("[data-theme-set]"));
-      var themeMeta = document.querySelector('meta[name="theme-color"]');
 
-      function currentTheme() {
-        return root.getAttribute("data-theme") === "dark" ? "dark" : "light";
-      }
+  <dialog class="search-dialog" aria-labelledby="search-title">
+    <h2 id="search-title">Search the system</h2>
+    <button class="doc-control" type="button" data-search-close>Close search</button>
+    <div class="field"><label for="system-search">Find a token, component, or guideline</label>
+      <input id="system-search" type="search" autocomplete="off" placeholder="Try button, focus, or wordmark"></div>
+    <p id="search-count" role="status"></p>
+    <ul class="search-results"></ul>
+  </dialog>
+  <p class="sr-only" id="copy-status" role="status"></p>
 
-      function syncHexes(theme) {
-        document.querySelectorAll("[data-hex-light]").forEach(function (el) {
-          var v = theme === "dark" ? el.getAttribute("data-hex-dark") : el.getAttribute("data-hex-light");
-          if (v) el.textContent = v;
-        });
-      }
-
-      function applyTheme(theme, persist) {
-        if (theme !== "dark") theme = "light";
-        root.setAttribute("data-theme", theme);
-        if (themeMeta) themeMeta.setAttribute("content", theme === "dark" ? "#241F18" : "#F6F1E8");
-        toggles.forEach(function (btn) {
-          btn.setAttribute("aria-pressed", btn.getAttribute("data-theme-set") === theme ? "true" : "false");
-        });
-        syncHexes(theme);
-        if (persist) {
-          try { localStorage.setItem(KEY, theme); } catch (e) {}
-        }
-      }
-
-      applyTheme(currentTheme(), false);
-
-      toggles.forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          applyTheme(btn.getAttribute("data-theme-set"), true);
-        });
-      });
-
-      if (window.matchMedia) {
-        var mq = window.matchMedia("(prefers-color-scheme: dark)");
-        var onChange = function (e) {
-          var stored = null;
-          try { stored = localStorage.getItem(KEY); } catch (err) {}
-          if (stored === "light" || stored === "dark") return;
-          applyTheme(e.matches ? "dark" : "light", false);
-        };
-        if (mq.addEventListener) mq.addEventListener("change", onChange);
-        else if (mq.addListener) mq.addListener(onChange);
-      }
-
-      var links = Array.prototype.slice.call(
-        document.querySelectorAll('.side-nav a[href^="#"], .top-nav-links a[href^="#"]')
-      );
-      var sections = links
-        .map(function (a) { return document.querySelector(a.getAttribute('href')); })
-        .filter(Boolean);
-
-      function setCurrent(id) {
-        links.forEach(function (a) {
-          var match = a.getAttribute('href') === '#' + id;
-          if (match) a.setAttribute('aria-current', 'true');
-          else a.removeAttribute('aria-current');
-        });
-      }
-
-      if ('IntersectionObserver' in window && sections.length) {
-        var io = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) setCurrent(entry.target.id);
-          });
-        }, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
-        sections.forEach(function (s) { io.observe(s); });
-      }
-
-      document.querySelectorAll('.char-art img').forEach(function (img) {
-        img.addEventListener('error', function () {
-          var file = (img.getAttribute('src') || '').split('/').pop();
-          var ph = document.createElement('div');
-          ph.className = 'placeholder';
-          ph.innerHTML = '<span>Asset pending<br><code style="border:none;background:transparent;color:inherit">' + file + '</code></span>';
-          img.replaceWith(ph);
-        });
-      });
-    })();
-  </script>
+  <script src="docs.js"></script>
+  <script src="demo.js"></script>
 </body>
 </html>
