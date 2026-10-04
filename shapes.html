@@ -7,28 +7,12 @@
   <meta name="color-scheme" content="light dark">
   <meta name="description" content="AtomicBytes mid-century shape sheet — original SVGs for sparks, orbits, boomerangs, and panels.">
   <title>AtomicBytes · Shapes</title>
-  <script>
-    (function () {
-      var KEY = "ab-theme";
-      var stored = null;
-      try { stored = localStorage.getItem(KEY); } catch (e) {}
-      var theme;
-      if (stored === "light" || stored === "dark") {
-        theme = stored;
-      } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        theme = "dark";
-      } else {
-        theme = "light";
-      }
-      document.documentElement.setAttribute("data-theme", theme);
-      var meta = document.querySelector('meta[name="theme-color"]');
-      if (meta) meta.setAttribute("content", theme === "dark" ? "#241F18" : "#F6F1E8");
-    })();
-  </script>
+  <script src="theme.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="components.css">
   <link rel="stylesheet" href="ds.css">
 </head>
 <body id="top">
@@ -48,7 +32,7 @@
           </button>
         </div>
       </div>
-      <ol class="top-nav-links">
+      <ol class="top-nav-links"><li><button class="doc-control" type="button" data-search-open aria-label="Search the system">Search</button></li>
         <li><a href="index.html">Design system</a></li>
         <li><a href="index.html#labels">Labels</a></li>
         <li><a href="shapes.html" aria-current="true">Shapes</a></li>
@@ -71,6 +55,7 @@
           <img class="theme-icon" src="assets/shapes/crescent.svg" alt="" width="22" height="22" decoding="async">
         </button>
       </div>
+      <button class="doc-control" type="button" data-search-open>Search the system</button>
       <ol>
         <li><a href="index.html"><span class="n">←</span> Design system</a></li>
         <li><a href="shapes.html" aria-current="true"><span class="n">◆</span> Shape sheet</a></li>
@@ -87,6 +72,13 @@
     </nav>
 
     <div class="content">
+      <div class="doc-tools" aria-label="Reference tools">
+        <p>AtomicBytes <strong>0.1.0</strong> · review release</p>
+        <button class="doc-control" type="button" data-search-open>Search the system</button>
+        <label for="section-picker">Jump to</label>
+        <select id="section-picker" aria-label="Jump to section"><option value="">Choose a section</option></select>
+      </div>
+
       <main id="main">
         <section class="ds-section" aria-labelledby="shapes-title">
           <p class="sec-kicker"><span class="dot" aria-hidden="true"></span> Shape sheet</p>
@@ -331,34 +323,25 @@
         </section>
 
         <footer class="ds-foot">
-          <p class="rubber">SHAPE SHEET · v0</p>
+          <p class="rubber">SHAPE SHEET · 0.1.0</p>
           <p class="domain"><a class="text-link" href="index.html">← Back to the design system</a></p>
         </footer>
       </main>
     </div>
   </div>
 
-  <script>
-    (function () {
-      var KEY = "ab-theme";
-      function apply(theme) {
-        document.documentElement.setAttribute("data-theme", theme);
-        var meta = document.querySelector('meta[name="theme-color"]');
-        if (meta) meta.setAttribute("content", theme === "dark" ? "#241F18" : "#F6F1E8");
-        document.querySelectorAll("[data-theme-set]").forEach(function (btn) {
-          btn.setAttribute("aria-pressed", btn.getAttribute("data-theme-set") === theme ? "true" : "false");
-        });
-      }
-      var current = document.documentElement.getAttribute("data-theme") || "light";
-      apply(current);
-      document.querySelectorAll("[data-theme-set]").forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          var theme = btn.getAttribute("data-theme-set");
-          apply(theme);
-          try { localStorage.setItem(KEY, theme); } catch (e) {}
-        });
-      });
-    })();
-  </script>
+
+  <dialog class="search-dialog" aria-labelledby="search-title">
+    <h2 id="search-title">Search the system</h2>
+    <button class="doc-control" type="button" data-search-close>Close search</button>
+    <div class="field"><label for="system-search">Find a token, component, or guideline</label>
+      <input id="system-search" type="search" autocomplete="off" placeholder="Try button, focus, or wordmark"></div>
+    <p id="search-count" role="status"></p>
+    <ul class="search-results"></ul>
+  </dialog>
+  <p class="sr-only" id="copy-status" role="status"></p>
+
+  <script src="docs.js"></script>
+  <script src="demo.js"></script>
 </body>
 </html>
